@@ -45,8 +45,9 @@ Feldunterscheidung
 \textbullet wirbelfreies Feld $\rightarrow$ Elektrische Ladungen sind Quellen des
 Feldes
 \begin{align*}
-    \Aboxed{\opdiv \vec{D} & = \nabla \cdot \vec{D}  = \rho} & \qquad \vec{D} & = \varepsilon \vec{E} \\
-    \Aboxed{\oprot \vec{E} & = \nabla \times \vec{E} = 0}    & \qquad         & = \oprot \opgrad E
+    \Aboxed{\opdiv \vec{D} & = \nabla \cdot \vec{D}  = \rho}\\
+    \Aboxed{\oprot \vec{E} & = \nabla \times \vec{E} = 0} \quad \Aboxed{\oprot \opgrad E & = 0}\\
+    \Aboxed{\vec{E} & = - \opgrad \varphi}
 \end{align*}
 
 \subsubsection{Potential Gleichung}
@@ -54,9 +55,8 @@ Feldes
     \opdiv \opgrad \varphi = - \dfrac{\rho}{\varepsilon}
 \]
 
-\textbf{$\qquad \Rightarrow$ Poisson-Gleichung} mit $\rho = 0$
-
-$\rightarrow$ \textbf{Laplace-Gleichung}
+\textbf{$\qquad \Rightarrow$ Poisson-Gleichung}\\
+mit $\rho = 0$ $\rightarrow$ \textbf{Laplace-Gleichung}
 \begin{align*}
     \Delta \varphi + \underbrace{ \dfrac{\opgrad \varepsilon \cdot \opgrad \varphi}{\varepsilon}}_{= 0\texttt{, wenn homogen}}
      & = - \dfrac{\rho (x, y, z)}{\varepsilon} \\
@@ -67,12 +67,6 @@ $\rightarrow$ \textbf{Laplace-Gleichung}
 \subsubsection{Green'sche Funktionen}
 \textbf{Potential einer Punktladung}
 \[ \varphi (r) = \dfrac{Q}{4 \pi \varepsilon_0 \cdot r} \qquad\left[V\right]\] 
-
-\textbf{E-Feld einer Punktladung}
-\[ \vec{E}(r) = \dfrac{Q}{4 \pi \varepsilon_0 \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{V}{m}\right]\] 
-
-\textbf{D-Feld einer Punktladung}
-\[ \vec{D}(r) = \dfrac{Q}{4 \pi \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{As}{m^2}\right]\]
 
 \textbf{Potentialfeld einer Ladungsverteilung}
 
@@ -86,6 +80,14 @@ mit $\varphi(\infty)=0$
 
 mit der Green'schen Funktion $G\left(\vec{r}, \vec{r}^{\,\prime}\right)=\frac{1}{4 \pi \varepsilon\left|\vec{r}-\vec{r}^{\,\prime}\right|}$
 \[\varphi(x, y, z)=\iiint_{V^{\prime}} G\left(\vec{r}^{\,\prime} \vec{r}^{\,\prime}\right) \rho\left(\vec{r}^{\,\prime}\right) \mathrm{d} V^{\prime}\]
+
+
+\textbf{E-Feld einer Punktladung}
+\[ \vec{E}(r) = \dfrac{Q}{4 \pi \varepsilon_0 \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{V}{m}\right]\] 
+
+\textbf{D-Feld einer Punktladung}
+\[ \vec{D}(r) = \dfrac{Q}{4 \pi \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{As}{m^3}\right]\]
+
 
 
 \subsection{Magnetostatik}
