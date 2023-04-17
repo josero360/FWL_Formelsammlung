@@ -60,6 +60,38 @@ mit der Green'schen Funktion $G\left(\vec{r}, \vec{r}^{\,\prime}\right)=\frac{1}
 \textbf{D-Feld einer Punktladung}
 \[ \vec{D}(r) = \dfrac{Q}{4 \pi \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{As}{m^3}\right]\]
 
+\subsubsection{Elektrischer Dipol}
+
+\begin{align*}
+    \Aboxed{\vec{p} = Q\cdot\vec{d}}
+\end{align*}
+
+\makebox[0pt][l]{
+    \begin{minipage}[b]{0.5\columnwidth}
+        \input{Figures/Felder_Elektrischer_Dipol_1.tex}
+    \end{minipage}
+    \begin{minipage}[b]{0.5\columnwidth}
+        \input{Figures/Felder_Elektrischer_Dipol_2.tex}
+    \end{minipage}
+}
+
+\makebox[0pt][l]{
+    \begin{minipage}[]{0.5\columnwidth}
+        \begin{align*}
+            \varphi & = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{r_1}-\frac{1}{r_2}\right)                                        \\
+                    & = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{r_2-r_1}{r^2}                                                        \\
+            \vec{E} & = -\nabla\varphi                                                                                             \\
+                    & = \frac{1}{4\pi\varepsilon_0}\cdot\left(\frac{3(\vec{p}\cdot\vec{r})\vec{r}}{r^5}-\frac{\vec{p}}{r^3}\right)
+        \end{align*}
+    \end{minipage}
+
+    \begin{minipage}[]{0.5\columnwidth}
+        \begin{align*}
+            \varphi & \approx\frac{Qd\cos\theta}{4\pi\varepsilon_0r^2}                  \\
+                    & = \frac{1}{4\pi\varepsilon_0}\cdot\frac{\vec{p}\cdot\vec{r}}{r^3}
+        \end{align*}
+    \end{minipage}
+}
 
 
 \subsection{Magnetostatik}
@@ -97,39 +129,6 @@ mit $\opgrad \frac{1}{\left|\vec{r}-\vec{r}^{\,\prime}\right|}=-\frac{\vec{r}-\v
 
 {\footnotesize$\vec{r}:$ Aufpunkt $\quad \vec{r}^{\,\prime}:$ Quellpunkt}
 
-\subsubsection{Elektrischer Dipol}
-
-\begin{align*}
-    \Aboxed{\vec{p} = Q\cdot\vec{d}}
-\end{align*}
-
-\makebox[0pt][l]{
-    \begin{minipage}[b]{0.5\columnwidth}
-        \input{Figures/Felder_Elektrischer_Dipol_1.tex}
-    \end{minipage}
-    \begin{minipage}[b]{0.5\columnwidth}
-        \input{Figures/Felder_Elektrischer_Dipol_2.tex}
-    \end{minipage}
-}
-
-\makebox[0pt][l]{
-    \begin{minipage}[]{0.5\columnwidth}
-        \begin{align*}
-            \varphi & = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{r_1}-\frac{1}{r_2}\right)                                        \\
-                    & = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{r_2-r_1}{r^2}                                                        \\
-            \vec{E} & = -\nabla\varphi                                                                                             \\
-                    & = \frac{1}{4\pi\varepsilon_0}\cdot\left(\frac{3(\vec{p}\cdot\vec{r})\vec{r}}{r^5}-\frac{\vec{p}}{r^3}\right)
-        \end{align*}
-    \end{minipage}
-
-    \begin{minipage}[]{0.5\columnwidth}
-        \begin{align*}
-            \varphi & \approx\frac{Qd\cos\theta}{4\pi\varepsilon_0r^2}                  \\
-                    & = \frac{1}{4\pi\varepsilon_0}\cdot\frac{\vec{p}\cdot\vec{r}}{r^3}
-        \end{align*}
-    \end{minipage}
-}
-
 \subsubsection{Magnetischer Dipol}
 \input{Figures/Felder_Magnetischer_Dipol_1.tex}
 
@@ -138,6 +137,8 @@ mit $\opgrad \frac{1}{\left|\vec{r}-\vec{r}^{\,\prime}\right|}=-\frac{\vec{r}-\v
     A(r)                            & = \frac{\mu_0 \cdot I}{4 \pi} \int \frac{d \vec{s}}{| \vec{r} - \vec{s}|} = \frac{ \mu_0}{4 \pi} \frac{\vec{m} \times \vec{r}}{r^3} \\
     \vec{B} = \nabla \times \vec{A} & = \frac{\mu_0}{4 \pi} \left(\frac{3(\vec{m} \cdot \vec{r})\vec{r}}{r^5} - \frac{\vec{m}}{r^3}\right)
 \end{align*}
+
+\newpage
 \subsection{Skineffekt}
 
 \input{Figures/Felder_Skineffekt.tex}
@@ -149,39 +150,35 @@ mit $\opgrad \frac{1}{\left|\vec{r}-\vec{r}^{\,\prime}\right|}=-\frac{\vec{r}-\v
           \]
 
     \item Widerstand/Oberflächenwiderstand:
-          \begin{flalign*}
-              R_{AC} & = \frac{l}{\sigma \cdot A_{\texttt{eff}}} \\
-              R_{DC} & =\dfrac{l}{\sigma \pi R^{2}}             \\
-              R_F    & = \dfrac{1}{\sigma \delta}
-          \end{flalign*}
+        \begin{flalign*}
+            R_{AC} & = \frac{l}{\sigma \cdot A_{\texttt{eff}}} \\
+            R_{DC} & =\dfrac{l}{\sigma \pi R^{2}}             \\
+            R_F    & = \dfrac{1}{\sigma \delta}
+        \end{flalign*}
 
-    \item \textbf{Feldstärke} verglichen mit der Oberfläche:\\
-          \makebox[0pt][l]{
-              \begin{minipage}{0.5\columnwidth}
-                  \centering
-                  \[
-                      H\left( x,t\right) = H_{0}\cdot e^{^{-x}/_\delta}\cdot \cos \left( \omega t-\dfrac{x}{\delta}\right)
-                  \]
-                  \footnotesize analog für $E$-Feld
-              \end{minipage}
-          }
+    \item \textbf{Feldstärke} verglichen mit der Oberfläche:
+    \item analog für $E$-Feld
+        \[
+            H\left( x,t\right) = H_{0}\cdot e^{^{-x}/_\delta}\cdot \cos \left( \omega t-\dfrac{x}{\delta}\right)
+        \]  
 
     \item \textbf{Leistung} verglichen mit der Oberfläche:
-          \[
-              P\left( x,t\right) = \dfrac{1}{2} \cdot E_{0}\cdot e^{^{-x}/_\delta}\cdot H_{0}\cdot e^{^{-x}/_\delta}
-          \]
+        \[
+            P\left( x,t\right) = \dfrac{1}{2} \cdot E_{0}\cdot e^{^{-x}/_\delta}\cdot H_{0}\cdot e^{^{-x}/_\delta}
+        \]
 
     \item Amplitude und Phase bezogen auf $\delta$:
-          \begin{align*}
-              \text{Amplitude: } x   & =\delta \cdot \ln(\text{Dämpfung[ ]}) \\
-              \text{Phase: } \varphi & = -\frac{x}{\delta}
-          \end{align*}
+    \item mit $F =$ Dämpfungsfaktor
+        \begin{align*}
+            \text{Amplitude: } x   & = \ln(F) \qquad \left[\delta\right] \\
+            \text{Phase: } \varphi & = -\frac{x}{\delta}
+        \end{align*}
 
     \item Effektive Fläche:
-          \begin{align*}
-              A_{\texttt{eff}} & = A_{\texttt{ges}} - A_{\sigma} = R^2\pi-(R-\delta)^2\pi \\
-                               & = 2\cdot \pi \delta \left( R-\dfrac{\delta }{2}\right)
-          \end{align*}
+        \begin{align*}
+            A_{\texttt{eff}} & = A_{\texttt{ges}} - A_{\sigma} = R^2\pi-(R-\delta)^2\pi \\
+                            & = 2\cdot \pi \delta \left( R-\dfrac{\delta }{2}\right)
+        \end{align*}
 \end{description}
 
 Wenn die Länge nicht gegeben ist oder nach Wieviel \% nimmt der Widerstand bei
@@ -189,19 +186,19 @@ einer bestimmten Frequenz, kann dies mit der folgenden Formel berechnet werden:
 
 \begin{description}
     \item Bessel-Funktion:
-          \begin{align*}
-              \frac{R_{AC}}{R_{DC}} & =
-              \begin{dcases}
-                  1 + \frac{1}{3}x^4              & \text{für} \qquad x < 1 \\
-                  x + \frac{1}{4} + \frac{3}{64x} & \text{für} \qquad x > 1 \\
-              \end{dcases} \\
-              \frac{X_{AC}}{R_{DC}} & =
-              \begin{dcases}
-                  x^2\left( 1-\frac{x^4}{6} \right)   & \text{für} \qquad x < 1 \\
-                  x- \frac{3}{64x} + \frac{3}{128x^2} & \text{für} \qquad x > 1 \\
-              \end{dcases}
-          \end{align*}
-          \[
-              \boxed{x=\frac{r_0}{2\delta}} \qquad r_0 \hat{=} \textnormal{ Außendurchmesser}
-          \]
+        \begin{align*}
+            \frac{R_{AC}}{R_{DC}} & =
+            \begin{dcases}
+                1 + \frac{1}{3}x^4              & \text{für} \qquad x < 1 \\
+                x + \frac{1}{4} + \frac{3}{64x} & \text{für} \qquad x > 1 \\
+            \end{dcases} \\
+            \frac{X_{AC}}{R_{DC}} & =
+            \begin{dcases}
+                x^2\left( 1-\frac{x^4}{6} \right)   & \text{für} \qquad x < 1 \\
+                x- \frac{3}{64x} + \frac{3}{128x^2} & \text{für} \qquad x > 1 \\
+            \end{dcases}
+        \end{align*}
+        \[
+            \boxed{x=\frac{r_0}{2\delta}} \qquad r_0 \hat{=} \textnormal{ Außendurchmesser}
+        \]
 \end{description}
