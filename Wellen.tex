@@ -13,7 +13,7 @@
     \boxed{\vec{E}(z,t)
     = \underbrace{E_0}_{\mathclap{\text{Amplitude}}}
     \cdot \overbrace{e^{-\alpha z}}^{\mathclap{\text{Dämpfung}}}
-    \cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} \beta z)}_\text{Zeit- und Raumabhängigkeit}
+    \cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} k z)}_\text{Zeit- und Raumabhängigkeit (Wellenzahl)}
     \cdot\vec{e}_z}
 \end{empheq}
 \underline{Komplexer Amplitudenvektor}
@@ -31,7 +31,7 @@ $\alpha$ : Dämpfungskonstante [Np/m]
 
 $\beta$ : Phasenkonstante [rad/m]
 
-$v_p$ : Phasengeschwindigkeit [m/s]
+$v_p$ : Phasengeschwindigkeit [m/s] $\left(= \sqrt{x^2 + y^2 \dots} \right)$
 
 $v_g$ : Gruppengeschwindigkeit [m/s]
 
@@ -42,9 +42,9 @@ $\lambda$ : Wellen [m]
 \begin{align*}
     \lambda                 & = \dfrac{2\pi}{\beta} \qquad E_2 = E_1 e^{-\alpha z}                                                                                        \\
     v_p                     & = \lambda\cdot f = \dfrac{\omega}{\beta}                                                                                                    \\
-    \alpha                  & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\cdot\varepsilon^2}}{\color{red}{-}}1\right)}   \\
-    \beta                   & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\cdot\varepsilon^2}}{\color{green}{+}}1\right)} \\
-    \Aboxed{\underline{Z}_F & = \dfrac{\underline{E}}{\underline{H}} = \sqrt{\dfrac{j\omega\mu}{\sigma+j\omega\varepsilon}}}                                              \\
+    \alpha                  & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\kappa^2}{\omega^2\cdot\varepsilon^2}}{\color{red}{-}}1\right)}   \\
+    \beta                   & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\kappa^2}{\omega^2\cdot\varepsilon^2}}{\color{green}{+}}1\right)} \\
+    \Aboxed{\underline{Z}_F & = \dfrac{\underline{E}}{\underline{H}} = \sqrt{\dfrac{j\omega\mu}{\kappa+j\omega\varepsilon}}}                                              \\
 \end{align*}
 
 \subsubsection{Im leeren Raum(Vakuum)}
@@ -57,7 +57,7 @@ $\lambda$ : Wellen [m]
 \end{align*}
 
 \subsubsection{Im verlustlosen/idealen Dielektrika}
-verlustlos: $\sigma =0$, maximale Wirkleistung
+verlustlos: $\kappa =0$, maximale Wirkleistung
 
 $Z_F$ rein reel $\rightarrow$ ebene Welle
 \begin{align*}
@@ -69,23 +69,23 @@ $Z_F$ rein reel $\rightarrow$ ebene Welle
 \end{align*}
 
 \subsubsection{Im Dielektrika mit geringem Verlust}
-geringer Verlust: $0 < \sigma \ll\omega\varepsilon$
+geringer Verlust: $0 < \kappa \ll\omega\varepsilon$
 
 \begin{align*}
-    \alpha                  & \approx\dfrac{\sigma}{2}\cdot\sqrt{\dfrac{\mu}{\varepsilon}} = \frac{\sigma}{2}\cdot Z_{F0}                                                                \\
-    \beta                   & \approx\omega\sqrt{\mu\varepsilon}\left(1+\dfrac{1}{8}\cdot\dfrac{\sigma^2}{\omega^2\varepsilon^2}\right)                                                  \\
-    \lambda                 & = \dfrac{c_0}{f}\cdot\dfrac{1}{\sqrt{\mu_r\varepsilon_r}}\cdot\frac{1}{1+\frac{1}{8}\left(\frac{\sigma}{\omega\varepsilon}\right)^2}                       \\
-    v_p                     & = \dfrac{c_0}{\sqrt{\mu_r\varepsilon_r}}\cdot\frac{1}{1+\frac{1}{8}\left(\frac{\sigma}{\omega\varepsilon}\right)^2}                                        \\
-    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}\left(1-\frac{j\sigma}{\omega\varepsilon}\right)^{-^1/2} \approx Z_{F0}\left(1+\frac{j\sigma}{2\omega\varepsilon}\right)}
+    \alpha                  & \approx\dfrac{\kappa}{2}\cdot\sqrt{\dfrac{\mu}{\varepsilon}} = \frac{\kappa}{2}\cdot Z_{F0}                                                                \\
+    \beta                   & \approx\omega\sqrt{\mu\varepsilon}\left(1+\dfrac{1}{8}\cdot\dfrac{\kappa^2}{\omega^2\varepsilon^2}\right)                                                  \\
+    \lambda                 & = \dfrac{c_0}{f}\cdot\dfrac{1}{\sqrt{\mu_r\varepsilon_r}}\cdot\frac{1}{1+\frac{1}{8}\left(\frac{\kappa}{\omega\varepsilon}\right)^2}                       \\
+    v_p                     & = \dfrac{c_0}{\sqrt{\mu_r\varepsilon_r}}\cdot\frac{1}{1+\frac{1}{8}\left(\frac{\kappa}{\omega\varepsilon}\right)^2}                                        \\
+    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}\left(1-\frac{j\kappa}{\omega\varepsilon}\right)^{-^1/2} \approx Z_{F0}\left(1+\frac{j\kappa}{2\omega\varepsilon}\right)}
 \end{align*}
 
 \subsubsection{Im guten Leiter}
-geringer Verlust: $\sigma \gg\omega\varepsilon$
+geringer Verlust: $\kappa \gg\omega\varepsilon$
 \begin{align*}
-    \alpha                  & \approx \beta \approx\sqrt{\frac{\omega\mu\sigma}{2}}=\dfrac{1}{\delta}\sim\sqrt{f} \\
-    \lambda                 & = 2\pi \sqrt{\dfrac{2}{\omega\mu\sigma}}=2\pi\delta                                 \\
+    \alpha                  & \approx \beta \approx\sqrt{\frac{\omega\mu\kappa}{2}}=\dfrac{1}{\delta}\sim\sqrt{f} \\
+    \lambda                 & = 2\pi \sqrt{\dfrac{2}{\omega\mu\kappa}}=2\pi\delta                                 \\
     v_p                     & = \frac{2\pi}{\beta} = \omega\delta                                                 \\
-    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{j\omega\mu}{\sigma}} \approx \dfrac{1+j}{\sigma\cdot\delta}}
+    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{j\omega\mu}{\kappa}} \approx \dfrac{1+j}{\kappa\cdot\delta}}
 \end{align*}
 \newpage
 \subsection{Übergang}
@@ -169,19 +169,19 @@ sehr gute Leiter
 
 \textbf{Zeitabhängigkeit harmonisch:}
 \begin{align*}
-    \Delta \vec{H}   & = (j \omega \mu \sigma - \omega^2 \varepsilon \mu ) \vec{H}                                  \\
-    \Delta \vec{E} i & = (j \omega \mu \sigma - \omega^2 \varepsilon \mu ) \vec{E} + grad \frac{ \rho}{\varepsilon}
+    \Delta \vec{H}   & = (j \omega \mu \kappa - \omega^2 \varepsilon \mu ) \vec{H}                                  \\
+    \Delta \vec{E} i & = (j \omega \mu \kappa - \omega^2 \varepsilon \mu ) \vec{E} + grad \frac{ \rho}{\varepsilon}
 \end{align*}
 
 \textbf{keine Raumladung $ \rho = 0$}
 \begin{align*}
-    \Delta \vec{E} & = (j \omega \mu \sigma - \omega^2 \varepsilon \mu ) \vec{E}
+    \Delta \vec{E} & = (j \omega \mu \kappa - \omega^2 \varepsilon \mu ) \vec{E}
 \end{align*}
 
 \textbf{Ebene Wellen}
 \begin{align*}
-    \Delta \vec{E} & = \frac{ \partial \vec{E}}{ \partial z^2} = j \omega \mu ( \sigma + j \omega \varepsilon) \vec{E} \\
-    \Delta \vec{H} & = \frac{ \partial \vec{E}}{ \partial z^2} = j \omega \mu ( \sigma + j \omega \varepsilon) \vec{H}
+    \Delta \vec{E} & = \frac{ \partial \vec{E}}{ \partial z^2} = j \omega \mu ( \kappa + j \omega \varepsilon) \vec{E} \\
+    \Delta \vec{H} & = \frac{ \partial \vec{E}}{ \partial z^2} = j \omega \mu ( \kappa + j \omega \varepsilon) \vec{H}
 \end{align*}
 
 %%%%%%%%%%%%%%%%%
@@ -325,7 +325,7 @@ Magnetisches Feld:
 
 
 
-\subsubsection[Senkrechter Einfall ideales/verlustl. Dielekt.]{Senkrechter Einfall ideales/verlustl. Dielekt. $\sigma = 0$}
+\subsubsection[Senkrechter Einfall ideales/verlustl. Dielekt.]{Senkrechter Einfall ideales/verlustl. Dielekt. $\kappa = 0$}
 
 %\includegraphics[width=\columnwidth]{Figures/senkrechterEinfall.png}
 
