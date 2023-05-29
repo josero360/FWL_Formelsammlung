@@ -37,6 +37,30 @@ $v_g$ : Gruppengeschwindigkeit [m/s]
 
 $\lambda$ : Wellen [m]
 
+\subsection{Grundlagen}
+\textbf{Brechungszahl:}
+\[ n = \dfrac{c_0}{c} = \sqrt{\epsilon_r} \geq 1 \]
+
+\textbf{Wellenzahl:}
+Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
+\begin{align*}
+    k & = \frac{\omega}{v_p} = \frac{2 \pi f}{v_p} = |\vec{k}|                                                                      \\
+      & = \frac{\omega \cdot n}{c_{0}} = n \cdot k_{0}=\frac{1}{\sqrt{\mu_{r} \cdot \varepsilon_{r}}} \cdot k_{0}=k_{r} \cdot k_{0}
+\end{align*}
+
+\textbf{Wellenlänge:}
+\begin{align*}
+    \lambda   & = \dfrac{\lambda_0}{\sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{2 \pi}{k} = \dfrac{v_p}{f} = [m] \\
+              & = \dfrac{\lambda_0}{n} = \dfrac{2 \pi}{n \cdot k_0}                                             \\
+    \lambda_0 & = \dfrac{c_0}{f} = \dfrac{2\pi}{k_0}
+\end{align*}
+
+\textbf{Phasengeschwindigkeit:}
+\[
+    v_p = \dfrac{\omega}{k} = \frac{1}{\sqrt{ \mu_r \mu_0 \varepsilon_r \varepsilon_0}} \qquad v_{p,\texttt{Medium} \leq c_0}
+\]
+
+
 \subsection{Ausbreitung}
 \subsubsection{Allgemein}
 \begin{align*}
@@ -44,13 +68,13 @@ $\lambda$ : Wellen [m]
     v_p                     & = \lambda\cdot f = \dfrac{\omega}{\beta}                                                                                                    \\
     \alpha                  & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\kappa^2}{\omega^2\cdot\varepsilon^2}}{\color{red}{-}}1\right)}   \\
     \beta                   & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\kappa^2}{\omega^2\cdot\varepsilon^2}}{\color{green}{+}}1\right)} \\
-    \Aboxed{\underline{Z}_F & = \dfrac{\underline{E}}{\underline{H}} = \sqrt{\dfrac{j\omega\mu}{\kappa+j\omega\varepsilon}}}                                              \\
+    \Aboxed{\underline{Z}_F & = \dfrac{\underline{E}}{\underline{H}} = \sqrt{\dfrac{j\omega\mu}{\kappa+j\omega\varepsilon}} = \dfrac{1}{n}\sqrt{\dfrac{\mu_0}{\varepsilon_0}}}                                              \\
 \end{align*}
 
 \subsubsection{Im leeren Raum(Vakuum)}
 \begin{align*}
     \alpha                     & = 0                                                                    \\
-    \beta                      & = \dfrac{\omega}{c_0}                                                  \\
+    k                          & = \dfrac{\omega}{c_0}                                                  \\
     \lambda                    & = \dfrac{c_0}{f}                                                       \\
     v_p                        & = c_0                                                                  \\
     \Aboxed{\underline{Z}_{F0} & = \sqrt{\dfrac{\mu_0}{\varepsilon_0}} = 120 \pi\Omega\approx377\Omega}
@@ -62,7 +86,7 @@ verlustlos: $\kappa =0$, maximale Wirkleistung
 $Z_F$ rein reel $\rightarrow$ ebene Welle
 \begin{align*}
     \alpha                  & = 0                                                                                              \\
-    \beta                   & = \dfrac{\omega}{c_0}\sqrt{\mu_r\varepsilon_r}=\omega\sqrt{\mu\varepsilon}=\dfrac{2\pi}{\lambda} \\
+    k                       & = \dfrac{\omega}{c_0}\sqrt{\mu_r\varepsilon_r}=\omega\sqrt{\mu\varepsilon}=\dfrac{2\pi}{\lambda} \\
     \lambda                 & = \dfrac{c_0}{f}\dfrac{1}{\sqrt{\mu_r\varepsilon_r}}                                             \\
     v_p                     & = \dfrac{c_0}{\sqrt{\mu_r\varepsilon_r}}                                                         \\
     \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}}
@@ -104,10 +128,8 @@ geringer Verlust: $\kappa \gg\omega\varepsilon$
 \begin{align*}
     \vec{S}             & =  \vec{E}\times\vec{H} \qquad \si{\left[\frac{W}{m^2}\right]} \\
     \vec{S}_{\text{av}} & =  \frac{1}{2} \cdot Re\{\vec{E}\times\vec{H}^*\}              \\
-    S_{AV}              & =  \frac{1}{2} \cdot E \cdot H =                               \\
-                        & =  \frac{1}{2} \cdot \dfrac{E^2}{Z_{F0}} =                     \\
-                        & =  \frac{1}{2} \cdot H^2 \cdot Z_{F0}                          \\
-                        & =  \dfrac{P}{A_\texttt{Fläche}}                                \\
+    S_{AV}              & =  \frac{1}{2} \cdot E \cdot H = \frac{1}{2} \cdot \dfrac{E^2}{Z_{F0}} = \\
+                        & =  \frac{1}{2} \cdot H^2 \cdot Z_{F0} =  \dfrac{P}{A_\texttt{Fläche}}                                \\
 \end{align*}
 
 \subsubsection{Leistung}
@@ -186,25 +208,6 @@ sehr gute Leiter
 
 %%%%%%%%%%%%%%%%%
 
-\subsection{Wellenzahl}
-Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
-\begin{align*}
-    k & = \frac{\omega}{v_p} = \frac{2 \pi f}{v_p} = |\vec{k}|                                                                      \\
-      & = \frac{\omega \cdot n}{c_{0}} = n \cdot k_{0}=\frac{1}{\sqrt{\mu_{r} \cdot \varepsilon_{r}}} \cdot k_{0}=k_{r} \cdot k_{0}
-\end{align*}
-
-\subsection{Wellenlänge}
-\begin{align*}
-    \lambda   & = \dfrac{\lambda_0}{\sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{2 \pi}{k} = \dfrac{v_p}{f} = [m] \\
-              & = \dfrac{\lambda_0}{n} = \dfrac{2 \pi}{n \cdot k_0}                                             \\
-    \lambda_0 & = \dfrac{c_0}{f} = \dfrac{2\pi}{k_0}
-\end{align*}
-
-\subsection{Phasengeschwindigkeit}
-\[
-    \dfrac{d z}{d t} = v_p = c = \dfrac{\omega}{k} = \frac{1}{\sqrt{ \mu_r \mu_0 \varepsilon_r \varepsilon_0}} \qquad v_{p,\texttt{Medium} \leq c_0}
-\]
-
 \subsubsection{Gruppengeschwindigkeit}
 \[
     v_g = \dfrac{d \omega}{d k} = \dfrac{\textnormal{Wegstück der Wellengruppe}}{\textnormal{Laufzeit der Wellengruppe}}
@@ -236,90 +239,51 @@ Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
     t_p & = \frac{2\cdot\sqrt{\varepsilon_{r1}}\cdot\cos\theta_i}{\sqrt{\varepsilon_{r2}}\cdot\cos\theta_i + \sqrt{\varepsilon_{r1}}\cdot\cos\theta_t}
 \end{align*}
 
-\subsection{Totalrefexion}
+\subsection{Totalrefexion, Grenzwinkel}
 \begin{align*}
-    \sin\theta_g & = \frac{n_2}{n_1} = \frac{\sqrt{\varepsilon_{r2}\mu_{r2}}}{\varepsilon_{r1}\mu_{r1}}
-\end{align*}
-
-\subsection{Grenzwinkel}
-\begin{align*}
+    \sin\theta_g & = \frac{n_2}{n_1} = \frac{\sqrt{\varepsilon_{r2}\mu_{r2}}}{\varepsilon_{r1}\mu_{r1}}\\
     \alpha_g & = \sin^{-1} \left( \sqrt{ \dfrac{\mu_{r1} \varepsilon_{r1}}{\mu_{r2} \varepsilon_{r2}}} \right)
 \end{align*}
-\subsection[Brewster-/Polarisationswinkel]{Brewster-/Polarisationswinkel, $r=0$}
-\begin{itemize}
-    \item Snelliusche Brechungsgesetz
-          %\item Grenzwinkel $\alpha_g$
-          % \item[--] Brewsterwinkel $\alpha_B$ (Welle transmittiert reflexionsfrei)
-          %       \begin{itemize}
-          %           \item[\textbullet] Parallele Polarisation (Nur wenn $\mu_{r1} = \mu_{r2}$)
-          %           \item[\textbullet] Senkrechte Polarisation (Nur wenn $\varepsilon_{r1} = \varepsilon_{r2}$)
-          %       \end{itemize}
-    \item Paralleler Reflexionskoeffizient:
-          \begin{align*}
-              \Aboxed{\mu_{r1}=\mu_{r2}}                                                                                                    \\
-              \sin\theta_b & = \sqrt{\frac{\varepsilon_2(\mu_2\varepsilon_1 - \mu_1\varepsilon_2)}{\mu_1(\varepsilon_1^2-\varepsilon_2^2)}} \\
-              \tan\theta_b & = \sqrt{\frac{\varepsilon_2}{\varepsilon_1}} = \frac{n_2}{n_1}
-          \end{align*}
-
-    \item Senkrechter Reflexionskoeffizient:
-          \begin{align*}
-              \Aboxed{\varepsilon_{r1}=\varepsilon_{r2}}                                                                    \\
-              \sin\theta_b & = \sqrt{\frac{\mu_2(\mu_2\varepsilon_1 - \mu_1\varepsilon_2)}{\varepsilon_1(\mu_2^2-\mu_1^2)}} \\
-              \tan\theta_b & = \sqrt{\frac{\mu_2}{\mu_1+\mu_2}}
-          \end{align*}
-\end{itemize}
 
 \begin{align*}
     \dfrac{\sin \vartheta_{2}}{\sin \vartheta_{1}} = \dfrac{k_{h}}{k_{g}} & = \sqrt{\dfrac{\mu_{r 1} \varepsilon_{r 1}}{\mu_{r 2} \varepsilon_{r 2}}} = \dfrac{n_{1}}{n_{2}} = \dfrac{v_{p, 2}}{v_{p, 1}} = \dfrac{\lambda_{2}}{\lambda_{1}} \\
     % \alpha_{Bp}                                                           & = \tan^{-1} \left( \sqrt{ \dfrac{\varepsilon_{r1}}{\varepsilon_{r2}}} \right)                                                                                        \\
     % \alpha_{Bs}                                                           & = \tan^{-1} \left( \sqrt{ \dfrac{\mu_{r1}}{\mu_{r2}}} \right)
 \end{align*}
-\newpage
+
 \subsection[Senkrechter Einfall]{Senkrechter Einfall $ \theta_h = 0$ }
 
 \input{Figures/Wellen_Senkrechter_Uebergang.tex}
 
 \begin{align*}
-    t  = \frac{2 \cdot Z_{F2}}{Z_{F1} + Z_{F2}}\qquad r  = \frac{Z_{F2} - Z_{F1}}{Z_{F1} + Z_{F2}} \\
-    %\qquad = \frac{\sqrt{\varepsilon_{r2}}-\sqrt{\varepsilon_{r1}}}{\sqrt{\varepsilon_{r2}}+\sqrt{\varepsilon_{r1}}}
-\end{align*}
-
-\begin{align*}
-    0<t<2 \qquad 0<|r|<1
+    t  &= \left(\frac{2 \cdot \sqrt{Z_{F1} Z_{F2}}}{Z_{F1} + Z_{F2}}\right)^2 = \left(\frac{2 \cdot \sqrt{n_1 n_2}}{n_1 + n_2}\right)^2\\ 
+    r  &= \left(\frac{Z_{F2} - Z_{F1}}{Z_{F1} + Z_{F2}}\right)^2 = \left(\frac{n_1 - n_2}{n_1 + n_2}\right)^2\\
+    n^2 &= \epsilon_r \cdot \mu_r\\
+    0<t&<2 \qquad 0<|r|<1
 \end{align*}
 
 Elektrisches Feld:
-
-
-\begin{align*}
-    E_t & = t \cdot E_h \\
-    E_r & = r \cdot E_h
-\end{align*}
-
+\[ E_t = t_e \cdot E_h \qquad E_r = r_e \cdot E_h \]
+    
 \begin{align*}
     %\vec{E_t}    & = \vec{E_h} + \vec{E_r} \\
     E_t          & = E_h + E_r             \\
-    t\cdot E_{h} & = E_{h} + r\cdot  E_{h} \\
-    t            & = 1+ r
+    t_e\cdot E_{h} & = E_{h} + r_e\cdot  E_{h} \\
+    t_e            & = 1+ r_e ??
+    t_e &= \dfrac{2 \cdot n_2}{n_1 + n_2}\\
+    r_e &= \dfrac{n_2 - n_1}{n_1 + n_2}
 \end{align*}
 
 Magnetisches Feld:
-
-% \begin{align*}
-%     r_m & = r = r_e                                                    \\
-%     t_m & = \frac{2}{1+\sqrt{^{\varepsilon_{r1}}/_{\varepsilon_{r2}}}}
-% \end{align*}
-
-\begin{align*}
-    H_t & = t \cdot H_h \\
-    H_r & = r \cdot H_h
-\end{align*}
+\[ H_t = t_m \cdot H_h \qquad H_r = r_m \cdot H_h \]
 
 \begin{align*}
     %\vec{H_t}                   & = \vec{H_h}-\vec{H_r}                                \\
-    H_t                         & = H_h + H_r                                          \\
-    \frac{t\cdot E_{h}}{Z_{F2}} & = \frac{E_{h}}{Z_{F1}} - \frac{r\cdot E_{h}}{Z_{F1}} \\
-    \frac{t}{Z_{F2}}            & = \frac{1}{Z_{F1}} - \frac{r}{Z_{F1}}
+    H_t                         & = H_h - H_r                                          \\
+    \frac{t_m\cdot E_{h}}{Z_{F2}} & = \frac{E_{h}}{Z_{F1}} - \frac{r_m\cdot E_{h}}{Z_{F1}} \\
+    \frac{t_m}{Z_{F2}}            & = \frac{1}{Z_{F1}} - \frac{r_m}{Z_{F1}}\\
+    t_m &= \dfrac{2 \cdot n_1}{n_1 + n_2}\\
+    r_m &= \dfrac{n_2 - n_1}{n_1 + n_2}
 \end{align*}
 
 
@@ -332,11 +296,8 @@ Magnetisches Feld:
 \begin{align*}
     \text{reel: }Z_F          & = \sqrt{\frac{\mu}{\varepsilon}} \\
     \texttt{imaginär: }\gamma & = j \omega\sqrt{\mu\varepsilon}
-\end{align*}
-
-\begin{align*}
-    r & = \frac{Z_{F2} - Z_{F1}}{Z_{F1} + Z_{F2}} = \frac{\sqrt{\frac{\mu_2}{\varepsilon_2}} - \sqrt{\frac{\mu_1}{\varepsilon_1}}}{\sqrt{\frac{\mu_2}{\varepsilon_2}} + \sqrt{\frac{\mu_1}{\varepsilon_1}}} \\
-    t & = \frac{2 Z_{F2}}{Z_{F1} + Z_{F2}} = \frac{2\sqrt{\varepsilon_{r1}\mu_{r2}}}{\sqrt{\varepsilon_{r1}\mu_{r2}}+\sqrt{\varepsilon_{r2}\mu_{r1}}}
+    r = \frac{Z_{F2} - Z_{F1}}{Z_{F1} + Z_{F2}} &= \frac{\sqrt{\frac{\mu_2}{\varepsilon_2}} - \sqrt{\frac{\mu_1}{\varepsilon_1}}}{\sqrt{\frac{\mu_2}{\varepsilon_2}} + \sqrt{\frac{\mu_1}{\varepsilon_1}}} \\
+    t = \frac{2 Z_{F2}}{Z_{F1} + Z_{F2}} &= \frac{2\sqrt{\varepsilon_{r1}\mu_{r2}}}{\sqrt{\varepsilon_{r1}\mu_{r2}}+\sqrt{\varepsilon_{r2}\mu_{r1}}}
 \end{align*}
 
 % \begin{tabularx}{\columnwidth}{>{\hsize=.35\hsize}X|>{\hsize=.32\hsize}X>{\hsize=.18\hsize}X>{\hsize=.18\hsize}X}
@@ -345,19 +306,19 @@ Magnetisches Feld:
 %     ideales Dielektr. & $\mu_{r1} = \varepsilon_{r1} = 1$ &            &         \\
 % \end{tabularx}
 
-\subsubsection[Spezialfall Medium 1 ist Luft]{Spezialfall $\underline{Medium 1}$ ist Luft}
-\begin{align*}
-    \Aboxed{ & \mu_{r1} = \varepsilon_{r1} = 1}                                                            \\
-    r        & = \frac{\sqrt{\mu_{r2}}-\sqrt{\varepsilon_{r2}}}{{\sqrt{\mu_{r2}}+\sqrt{\varepsilon_{r2}}}} \\
-    t        & = \frac{2\sqrt{\mu_{r2}}}{\sqrt{\mu_{r2}}+\sqrt{\varepsilon_{r2}}}
-\end{align*}
+% \subsubsection[Spezialfall Medium 1 ist Luft]{Spezialfall $\underline{Medium 1}$ ist Luft}
+% \begin{align*}
+%     \Aboxed{ & \mu_{r1} = \varepsilon_{r1} = 1}                                                            \\
+%     r        & = \frac{\sqrt{\mu_{r2}}-\sqrt{\varepsilon_{r2}}}{{\sqrt{\mu_{r2}}+\sqrt{\varepsilon_{r2}}}} \\
+%     t        & = \frac{2\sqrt{\mu_{r2}}}{\sqrt{\mu_{r2}}+\sqrt{\varepsilon_{r2}}}
+% \end{align*}
 
-\subsubsection[Spezialfall Medium 2 ist Luft]{Spezialfall $\underline{Medium 2}$ ist Luft}
-\begin{align*}
-    \Aboxed{ & \mu_{r2} = \varepsilon_{r2} = 1}                                                            \\
-    r        & = \frac{\sqrt{\varepsilon_{r1}}-\sqrt{\mu_{r1}}}{{\sqrt{\varepsilon_{r1}}+\sqrt{\mu_{r1}}}} \\
-    t        & = \frac{2\sqrt{\varepsilon_{r1}}}{\sqrt{\mu_{r1}}+\sqrt{\varepsilon_{r1}}}
-\end{align*}
+% \subsubsection[Spezialfall Medium 2 ist Luft]{Spezialfall $\underline{Medium 2}$ ist Luft}
+% \begin{align*}
+%     \Aboxed{ & \mu_{r2} = \varepsilon_{r2} = 1}                                                            \\
+%     r        & = \frac{\sqrt{\varepsilon_{r1}}-\sqrt{\mu_{r1}}}{{\sqrt{\varepsilon_{r1}}+\sqrt{\mu_{r1}}}} \\
+%     t        & = \frac{2\sqrt{\varepsilon_{r1}}}{\sqrt{\mu_{r1}}+\sqrt{\varepsilon_{r1}}}
+% \end{align*}
 
 \subsubsection[Spezialfall beide Medien NICHT magnetisch]{Spezialfall $\underline{beide Medien}$ NICHT magnetisch}
 \begin{align*}
