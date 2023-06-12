@@ -1,7 +1,6 @@
 \subsection{Senkrechte (E-Feld) Polarisation (H-Feld parallel)}
 \input{Figures/SchraegerUebergang_senk_Polarisation.tex}
 
-\[ \boxed{\texttt{mit } Z_{F0} = 120\pi \approx 377\si{\ohm}} \]
 \begin{align*}
     Z_{Fn}                & = Z_{F0}\cdot\frac{1}{\sqrt{\varepsilon_{rn}}}            \\
     \frac{Z_{F1}}{Z_{F2}} & = \frac{\sqrt{\varepsilon_{r2}}}{\sqrt{\varepsilon_{r1}}}
@@ -12,11 +11,11 @@
     \sin\theta_t                      & = \sqrt{\frac{\varepsilon_{r1}}{\varepsilon_{r2}}}\cdot \sin\theta_h
 \end{align*}
 
-\begin{itemize}
-    \item magnetischer/elektrischer Reflexionsfaktor $[1]$
-    \item magnetischer Transmissionsfaktor $[1]$
-    \item elektrischer Transmissionsfaktor $[1]$
-\end{itemize}
+% \begin{itemize}
+%     \item magnetischer/elektrischer Reflexionsfaktor $[1]$
+%     \item magnetischer Transmissionsfaktor $[1]$
+%     \item elektrischer Transmissionsfaktor $[1]$
+% \end{itemize}
 \begin{align*}
     r_s    & =  r_{es} = r_{ms} =                                                                                                                                            \\
            & = \frac{Z_{F2} \cdot \cos \theta_h-Z_{F1} \cdot \cos \theta_t}{Z_{F2} \cdot \cos \theta_h+Z_{F1} \cdot \cos \theta_t}                                           \\
@@ -28,14 +27,14 @@
            & = 1+r_s
 \end{align*}
 
-\begin{align*}
-    E_r & = r_s \cdot E_h    \\
-    E_t & = t_{es} \cdot E_h \\
-    H_r & = r_s \cdot H_h    \\
-    H_t & = t_{ms} \cdot H_h \\
-    E_t & = H_t\cdot Z_{F2}  \\
-    E_h & = H_h\cdot Z_{F1}
-\end{align*}
+% \begin{align*}
+%     E_r & = r_s \cdot E_h    \\
+%     E_t & = t_{es} \cdot E_h \\
+%     H_r & = r_s \cdot H_h    \\
+%     H_t & = t_{ms} \cdot H_h \\
+%     E_t & = H_t\cdot Z_{F2}  \\
+%     E_h & = H_h\cdot Z_{F1}
+% \end{align*}
 
 \subsection{Brewster-/Polarisationswinkel, $r=0$}
 \begin{align*}
@@ -47,7 +46,6 @@
 \subsection{Parallel (E-Feld) Polarisation (H-Feld senkrecht)}
 \input{Figures/SchraegerUebergang_para_Polaristion.tex}
 
-\[ \boxed{\texttt{mit } Z_{F0} = 120\pi \approx 377\si{\ohm}} \]
 \begin{align*}
     Z_{Fn}                & = Z_{F0}\cdot\frac{1}{\sqrt{\varepsilon_{rn}}}            \\
     \frac{Z_{F1}}{Z_{F2}} & = \frac{\sqrt{\varepsilon_{r2}}}{\sqrt{\varepsilon_{r1}}}
@@ -58,14 +56,14 @@
     \sin\theta_t                      & = \sqrt{\frac{\varepsilon_{r1}}{\varepsilon_{r2}}}\cdot\sin\theta_h
 \end{align*}
 
-\begin{itemize}
-    \item magnetischer/elektrischer Reflexionsfaktor $[1]$
-    \item magnetischer Transmissionsfaktor $[1]$
-    \item elektrischer Transmissionsfaktor $[1]$
-\end{itemize}
+% \begin{itemize}
+%     \item magnetischer/elektrischer Reflexionsfaktor $[1]$
+%     \item magnetischer Transmissionsfaktor $[1]$
+%     \item elektrischer Transmissionsfaktor $[1]$
+% \end{itemize}
 \begin{align*}
     r_p    & =  r_{ep} = r_{mp} =                                                                                                                                                                                                        \\
-           & = \frac{Z_{F2} \cdot \cos \theta_t-Z_{F1} \cdot \cos \theta_h}{Z_{F2} \cdot \cos \theta_t+Z_{F1} \cdot \cos \theta_h} =                                                                                                     \\
+           & = \frac{Z_{F1} \cdot \cos \theta_h-Z_{F2} \cdot \cos \theta_t}{Z_{F1} \cdot \cos \theta_h+Z_{F2} \cdot \cos \theta_t}                                                                                                       \\
            & = \frac{\varepsilon_{r2}\cos\theta_h-\sqrt{\varepsilon_{r2}\varepsilon_{r1}-{\varepsilon_{r1}}^2\sin^2\theta_h}}{\varepsilon_{r2}\cos\theta_h+\sqrt{{\varepsilon_{r2}\varepsilon_{r1}-{\varepsilon_{r1}}^2\sin^2\theta_h}}} \\
     t_{mp} & = Z_{F1} \cdot \frac{2 \cdot \cos \theta_h}{Z_{F1} \cdot \cos \theta_h+Z_{F2} \cdot \cos \theta_t}                                                                                                                          \\
            & = 1+r_p                                                                                                                                                                                                                     \\
@@ -74,14 +72,14 @@
            & = \frac{Z_{F2}}{Z_{F1}}\cdot t_{mp}
 \end{align*}
 
-\begin{align*}
-    E_r & = r_p\cdot E_h    \\
-    E_t & = t_{ep}\cdot E_h \\
-    H_r & = r_p\cdot H_h    \\
-    H_t & = t_{mp}\cdot H_h \\
-    E_t & = H_t\cdot Z_{F2} \\
-    E_h & = H_h\cdot Z_{F1}
-\end{align*}
+% \begin{align*}
+%     E_r & = r_p\cdot E_h    \\
+%     E_t & = t_{ep}\cdot E_h \\
+%     H_r & = r_p\cdot H_h    \\
+%     H_t & = t_{mp}\cdot H_h \\
+%     E_t & = H_t\cdot Z_{F2} \\
+%     E_h & = H_h\cdot Z_{F1}
+% \end{align*}
 
 \subsection{Brewster-/Polarisationswinkel, $r=0$}
 \begin{align*}
