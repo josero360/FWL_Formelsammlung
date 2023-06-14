@@ -1,16 +1,14 @@
 \section{Leitungen}
 \subsection{Allgemeine Lösung Leitungsgleichung}
 \begin{align*}
-    \underline{U}(\ell)   & = U_h e^{\underline{\gamma} \ell} + U_r e^{-\underline{\gamma} \ell} = U_h e^{\underline{\gamma} d} + U_r e^{-\underline{\gamma} d}                       \\
-    \underline{I}(\ell)   & = I_h e^{\underline{\gamma} \ell} + I_r e^{-\underline{\gamma} \ell} = \frac{U_h}{Z_L}e^{\underline{\gamma} d} - \frac{U_r}{Z_L}e^{-\underline{\gamma} d} \\
-    \underline{Z}_L    & = \frac{U_h}{I_h} = \sqrt{ \frac{R + j \omega L}{G + j \omega C}}                                                                                   \\
-    \underline{\gamma} & = j \omega \sqrt{LC} \cdot \sqrt{ \frac{RG}{j^2 \omega^2 LC} + \frac{G}{j \omega C} + \frac{R}{j \omega L} + 1}                                     \\
-                       & = \sqrt{(R+j\omega L)\cdot(G+j\omega C)}                                                                                                            \\
-    \lambda            & = \frac{2 \pi}{\beta}                                                                                                                               \\
-    v_p                & = \frac{\omega}{\beta}                                                                                                                              \\
-    l_\texttt{elektr.} & = \beta \cdot l                                                                                                                                     \\
-    \alpha             & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\cdot\varepsilon^2}}- 1\right)}           \\
-    \beta              & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\cdot\varepsilon^2}}+ 1\right)}
+    \underline{U}(\ell)  & = U_h e^{\underline{\gamma} \ell} + U_r e^{-\underline{\gamma} \ell} \\
+    \underline{I}(\ell)  & = I_h e^{\underline{\gamma} \ell} + I_r e^{-\underline{\gamma} \ell} \\
+    \underline{Z}_L     & = \frac{U_h}{I_h} = \sqrt{ \frac{R + j \omega L}{G + j \omega C}}                                                                                   \\
+    \underline{\gamma}  & = \alpha + j\beta = \sqrt{(R+j\omega L)\cdot(G+j\omega C)}                                                                                                            \\
+    \lambda             & = \frac{2 \pi}{\beta} \qquad v_p = \frac{\omega}{\beta} \\
+    l_\texttt{elek.}    & = \beta \cdot l                                                                                                                                     \\
+    \alpha              & = \frac{C R+L G}{2 \sqrt{L C}}=\frac{R}{2 Z_L}+\frac{Z_L G}{2}=\alpha_L+\alpha_D \\
+    \beta               & = (j) \omega \sqrt{L C}
 \end{align*}
 \subsubsection{Reflexionsfaktor}
 \begin{align*}
@@ -22,9 +20,9 @@
                     \alpha  & = -\frac{\ln(r_A)}{2l} [\si{Np/m}]  \qquad  \beta = \dfrac{\phi_2 -\phi_1}{2l} [\si{rad/m}]
 \end{align*}
 
-\subsubsection{Verlustlose Übertragungsleitung}
+\subsubsection{Verlustlose Übertragungsleitung }
 \begin{align*}
-    \underline{\gamma} & = j\omega\sqrt{LC}= j\beta                                                                                           \\
+    \beta              & = \omega\sqrt{LC} = \frac{2 \pi}{\lambda} = \frac{\omega}{v_p}\qquad \alpha = 0 \\
     Z_L                & =\frac{U_h}{U_r}       = \sqrt{\frac{L}{C}}                                                                          \\
     v_p                & = \frac{\omega}{\beta} = \frac{1}{\sqrt{LC}}= \frac{1}{\sqrt{\mu\varepsilon}}= \frac{c_0}{\sqrt{\mu_r\varepsilon_r}} \\
     \lambda            & = \frac{2\pi}{\beta}=\frac{1}{f\sqrt{LC}}= \frac{v_p}{f}= \frac{c_0}{f\sqrt{\mu_r\varepsilon_r}}
@@ -67,7 +65,7 @@
     r_A          & = -1                                                                                        \\
     \mathrm{SWR} & = \infty                                                                                    \\
     U(\ell)         & = U_h\cdot 2j\sin(\beta \ell)    \qquad\rightarrow U(\ell=0)=0                                    \\
-    \hat{U}_E    & = \hat{U}_{generator}\cdot\frac{\underline{Z}_E}{\underline{Z}_{generator}+\underline{Z}_E} \\
+    \hat{U}_E    & = \hat{U}_{G}\cdot\frac{\underline{Z}_E}{\underline{Z}_{G}+\underline{Z}_E} \\
     I(\ell)         & = U_h\cdot 2\cos(\beta \ell)    \qquad\rightarrow I(\ell=0)=I_A=\frac{2U_h}{Z_L}
 \end{align*}
 
@@ -85,10 +83,10 @@
 \begin{align*}
     \underline{U}(\ell) &= \underline{U}_A\left[\cos (\beta \ell)+\mathrm{j} \frac{\underline{Z}_L}{\underline{Z}_A} \sin (\beta \ell)\right] \\
     \underline{I}(\ell) &= \underline{I}_A\left[\cos (\beta \ell)+\mathrm{j} \frac{\underline{Z}_A}{\underline{Z}_L} \sin (\beta \ell)\right] \\
-    \underline{Z}_1     &= \frac{U(-\ell)}{\underline{I}(-\ell)}= \underline{Z}_A \cdot \frac{1+j \frac{Z_W}{\underline{Z}_A} \tan \beta \ell}{1+j \frac{\underline{Z}_A}{Z_W} \tan \beta \ell} 
+    \underline{Z}_E     &= \frac{U(-\ell)}{\underline{I}(-\ell)}= \underline{Z}_A \cdot \frac{1+j \frac{Z_W}{\underline{Z}_A} \tan \beta \ell}{1+j \frac{\underline{Z}_A}{Z_W} \tan \beta \ell} 
 \end{align*}
 Besonderheit bei $L=\frac{\lambda}{4}$ :
-$ \underline{Z}_1=\frac{Z_{W}^2}{\underline{Z}_A}$
+$ \underline{Z}_E=\frac{Z_{W}^2}{\underline{Z}_A}$
 
 \subsubsection{Fall: Ohm'sch abgeschlossene Leitung}
 \begin{align*}
@@ -99,6 +97,13 @@ $ \underline{Z}_1=\frac{Z_{W}^2}{\underline{Z}_A}$
                           & \rightarrow \ell_\texttt{min}=\frac{\lambda}{2}\cdot n
 \end{align*}
 
+\subsubsection{Stehwellenverhältnis/ Anpassungsfaktor}
+siehe auch Kap. \ref{sec:Smith_All}
+\begin{align*}
+    \mathrm{SWR}      & = \frac{U_\text{max}}{U_\text{min}} = \frac{I_\text{max}}{I_\text{min}} = \frac{1+|r(\ell)|}{1-|r(\ell)|} = \frac{|U_h|+|U_r|}{|U_h|-|U_r|} \\
+    m                 & = \frac{1}{\mathrm{SWR}} = \frac{1 - |r(\ell)|}{1 + |r(\ell)|}
+\end{align*}
+
 
 \subsubsection{vernachlässigbarer Widerstandsbelag}
 \includegraphics[width=\columnwidth]{Figures/vernachlaessigbarerWiderstandsbelag.png}
@@ -106,12 +111,6 @@ $ \underline{Z}_1=\frac{Z_{W}^2}{\underline{Z}_A}$
 \subsubsection{vernachlässigbarer Leitwertbelag}
 \includegraphics[width=\columnwidth]{Figures/vernachlaessigbarerLeiterwertbelag.png}
 
-\subsubsection{Stehwellenverhältnis/ Anpassungsfaktor}
-siehe auch Kap. \ref{sec:Smith_All}
-\begin{align*}
-    \mathrm{SWR}      & = \frac{U_\text{max}}{U_\text{min}} = \frac{I_\text{max}}{I_\text{min}} = \frac{1+|r(\ell)|}{1-|r(\ell)|} = \frac{|U_H|+|U_R|}{|U_H|-|U_R|} \\
-    m                 & = \frac{1}{\mathrm{SWR}} = \frac{1 - |r(\ell)|}{1 + |r(\ell)|}
-\end{align*}
 
 \subsubsection{Leistung}
 \begin{align*}
