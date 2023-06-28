@@ -55,7 +55,7 @@ Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
 
 \textbf{Phasengeschwindigkeit:}
 \[
-    v_p = \dfrac{\omega}{k} = \frac{1}{\sqrt{ \mu_r \mu_0 \varepsilon_r \varepsilon_0}} \qquad v_{p,\texttt{Medium} \leq c_0}
+    v_p = \dfrac{\omega}{k} = \frac{c_0}{\sqrt{ \mu_r \varepsilon_r }}  = \frac{1}{\sqrt{ \mu_r \mu_0 \varepsilon_r \varepsilon_0}} \qquad v_{p,\texttt{Medium} \leq c_0}
 \]
 
 
@@ -66,7 +66,7 @@ Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
     v_p                     & = \lambda\cdot f = \dfrac{\omega}{\beta}                                                                                                    \\
     \alpha                  & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\kappa^2}{\omega^2\cdot\varepsilon^2}} - 1\right)}   \\
     \beta                   & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\kappa^2}{\omega^2\cdot\varepsilon^2}} + 1\right)} \\
-    \Aboxed{\underline{Z}_F & = \dfrac{\underline{E}}{\underline{H}} = \sqrt{\dfrac{j\omega\mu}{\kappa+j\omega\varepsilon}} = \dfrac{1}{n}\sqrt{\dfrac{\mu_0}{\varepsilon_0}} = \dfrac{Z_{F0}}{\sqrt{\varepsilon_r \mu_r}}}                                              \\
+    \Aboxed{\underline{Z}_F & = \dfrac{\underline{E}}{\underline{H}} = \sqrt{\dfrac{j\omega\mu}{\kappa+j\omega\varepsilon}} = \dfrac{1}{n}\sqrt{\dfrac{\mu_0}{\varepsilon_0}} = Z_{F0} \cdot \sqrt{\dfrac{\mu_r}{\varepsilon_r }}}                                              \\
 \end{align*}
 
 \subsubsection{Im leeren Raum(Vakuum)}
@@ -134,9 +134,9 @@ geringer Verlust: $\dfrac{\kappa}{\omega\varepsilon} \gg 1$
 \begin{align*}
     P     & = \iint\vec{S}_{\text{av}}d\vec{a}                   \\
           & = Re\left\{\underline{U}\cdot\underline{I}^*\right\} \\
+    P_1   & = P_0 \cdot e^{-2\alpha z}                           \\
     W_{M} & = 1/_2\cdot\mu\cdot H^2                              \\
     W_{E} & = 1/_2\cdot\varepsilon\cdot E^2
-    P_1 & = P_0 \cdot e^{-2\alpha z}
 \end{align*}
 
 \subsubsection{Leistung vom Kabel transportiert}
