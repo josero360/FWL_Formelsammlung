@@ -33,21 +33,19 @@ mit $\eta = Z_{F0}$
 
 \subsubsection{Abgestrahlte Leistung im Fernfeld}
 \begin{align*}
-    P_\texttt{rad} & = \frac{Z_{F0} {I_0}^2 \beta^2 (\Delta l')^2}{12\pi}                             \\
+    P_{S} & = \frac{Z_{F0} {I_0}^2 \beta^2 (\Delta l')^2}{12\pi}                             \\
                    & = \frac{I_0^2 Z_F\pi}{3}\cdot \dfrac{\Delta l'^2}{\lambda^2}                     \\
                    & = 40\pi^2\Omega\cdot\left(\frac{I_0\Delta l'}{\lambda}\right)^2                  \\
     S_{av}         & = \frac{Z_FI_0^2\beta^2(\Delta l')^2}{32\pi^2R^2}\cdot\sin^2\theta\cdot\vec{e}_R \\
-                   & = \frac{1}{2}\Re\left\{\vec{E}\times\vec{H}^*\right\}
+                   & = \frac{1}{2} \hat{E}\cdot\hat{H} = \frac{1}{2} \frac{\hat{E}^2}{Z_{F}}
 \end{align*}
 \subsubsection{Strahlungswiderstand}
 \begin{align*}
-    R_{S} & = \frac{2}{3}\pi Z_F\left(\frac{\Delta l'}{\lambda}\right)^2
+    R_{S} & = \frac{2}{3}\pi \cdot Z_F\left(\frac{\Delta l'}{\lambda}\right)^2
     = 80\pi^2\Omega\left(\frac{\Delta l'}{\lambda}\right)^2
 \end{align*}
-\subsubsection{Verlustwiderstand}
-\begin{align*}
-    R_{v} & = \frac{l}{\sigma\cdot A_\delta}
-\end{align*}
+
+\vspace{25ex}
 \subsection{Magnetischer Dipol}
 \boxed{\vec{m} = \vec{I}\pi\vec{a}^2\vec{e}_z}
 \boxed{m = I\cdot A}
@@ -73,10 +71,10 @@ mit $\eta = Z_{F0}$
 \end{empheq}
 \subsubsection{Abgestrahlte Leistung im Fernfeld}
 \begin{align*}
-    P_\texttt{rad} & = \frac{Z_F\beta^4m^2}{12\pi}                                     \\
+    P_{S} & = \frac{Z_F\beta^4m^2}{12\pi}                                     \\
                    & = \frac{m^2\mu\omega^4}{12\pi v_p^3}                              \\
     S_{av}         & = \frac{Z_F\beta^4m^2}{32\pi^2R^2}\cdot\sin^2\theta\cdot\vec{e}_R \\
-                   & = \frac{1}{2}\Re\left\{\vec{E}\times\vec{H}^*\right\}
+                   & = \frac{1}{2} \hat{E}\cdot\hat{H} = \frac{1}{2} \frac{\hat{E}^2}{Z_{F}}
 \end{align*}
 
 \subsubsection{Nahfeld}
@@ -114,7 +112,7 @@ mit $\eta = Z_{F0}$
 
 \subsubsection{Verlustleistung}
 \begin{align*}
-    P_V & = \frac{1}{2}\cdot I_A^2\cdot R_V
+    P_V & = \frac{1}{2}\cdot I_A^2\cdot R_V \qquad R_{V} = \frac{l}{\sigma\cdot A}
 \end{align*}
 
 \subsubsection{Wirkungsgrad}
@@ -171,30 +169,33 @@ mit $P_0$ : Eingangsleistung der Antenne
           \]
 \end{description}
 
+
+
 \subsection{Senden und Empfangen}
 \input{Figures/Antennen_Empfangsersatzschaltbild_circuit.tex}
 
-\begin{description}
-    \item Senden = transmit = TX
-    \item Empfangen = receive = RX
-\end{description}
 
 \begin{align*}
-    \frac{P_{RX}}{P_{TX}}          & = A_{\texttt{eff},RX}\cdot A_{\texttt{eff},TX}\cdot\frac{1}{\lambda^2r^2}                          \\
-                                   & = D_{i,RX}\cdot\eta_{RX}\cdot D_{i,TX}\cdot\eta_{TX}\cdot\left(\frac{\lambda}{4\pi r}\right)^2     \\
-    \Aboxed{A_\texttt{eff}(\theta) & = G_{RX}\cdot\frac{\lambda^2}{4\pi}\overbrace{\cdot\frac{3}{2}\cdot\sin^2\theta}^{{D_{i,\theta}}}} \\
-    P_{RX}                         & = S_{RX}\cdot A_\texttt{eff}                                                                       \\
-                                   & = P_{TX}\cdot G_{TX}\cdot G_{RX}\cdot \left(\frac{\lambda}{4\pi r}\right)^2
+    \frac{P_{E}}{P_{S}}          & = A_{\texttt{eff},E}\cdot A_{\texttt{eff},S}\cdot\frac{1}{\lambda^2r^2}                          \\
+                                   & = D_{i,E}\cdot\eta_{E}\cdot D_{i,S}\cdot\eta_{S}\cdot\left(\frac{\lambda}{4\pi r}\right)^2     \\
+    \Aboxed{A_\texttt{eff}(\theta) & = G_{E}\cdot\frac{\lambda^2}{4\pi}\overbrace{\cdot\frac{3}{2}\cdot\sin^2\theta}^{{D_{i,\theta}}}} \\
+    P_{E}                         & = S_{E}\cdot A_\texttt{eff}                                                                       \\
+                                   & = P_{S}\cdot G_{S}\cdot G_{E}\cdot \left(\frac{\lambda}{4\pi r}\right)^2
+\end{align*}
+
+\subsubsection{Empfangene Leistungsdichte}
+\begin{align*}
+    S_E &= \frac{P_S}{4 \pi r^2} \cdot G_S
 \end{align*}
 
 \subsubsection{Freiraumdämpfung/Freiraumdämpfungsmaß}
 \begin{align*}
-    F = \dfrac{P_{TX}}{P_{RX}} \cdot \left(\dfrac{4 \pi d}{\lambda}\right)^2                         & \qquad [1]       \\
+    F = \dfrac{P_{S}}{P_{E}} \cdot \left(\dfrac{4 \pi d}{\lambda}\right)^2                         & \qquad [1]       \\
     a_{0} = 20 \lg \left(\frac{4 \pi d}{\lambda}\right) =20 \lg \left(\frac{4 \pi d f}{c_{0}}\right) & \qquad [\si{dB}]
 \end{align*}
 
 \subsubsection{Leistungspegel/Freiraumpegel}
 \begin{align*}
     L      & = 10 \lg \left(\frac{P}{1 \si{mW}}\right) \qquad [\si{dBm}] \\
-    L_{RX} & = L_{TX}+g_{TX}+g_{RX}-a_{0} \qquad [\si{dB}]
+    L_{E} & = L_{S}+g_{S}+g_{E}-a_{0} \qquad [\si{dB}]
 \end{align*}
