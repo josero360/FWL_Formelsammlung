@@ -1,29 +1,109 @@
 \section{Leitungen}
-
-\textbf{\color{red}{Leitungen gehen HIN und ZURÜCK!!!}\\
-    \color{red}{Länge verdoppeln!!!}
-}
 \subsection{Allgemeine Lösung Leitungsgleichung}
 \begin{align*}
-    \underline{U}(z)   & = U_h e^{\underline{\gamma} z} + U_r e^{-\underline{\gamma} z} = U_h e^{\underline{\gamma} d} + U_r e^{-\underline{\gamma} d}                       \\
-    \underline{I}(z)   & = I_h e^{\underline{\gamma} z} + I_r e^{-\underline{\gamma} z} = \frac{U_h}{Z_L}e^{\underline{\gamma} d} - \frac{U_r}{Z_L}e^{-\underline{\gamma} d} \\
-    \underline{Z}_L    & = \frac{U_h}{I_h} = \sqrt{ \frac{R + j \omega L}{G + j \omega C}}                                                                                   \\
-    \underline{\gamma} & = j \omega \sqrt{LC} \cdot \sqrt{ \frac{RG}{j^2 \omega^2 LC} + \frac{G}{j \omega C} + \frac{R}{j \omega L} + 1}                                     \\
-                       & = \sqrt{(R+j\omega L)\cdot(G+j\omega C)}                                                                                                            \\
-    \lambda            & = \frac{2 \pi}{\beta}                                                                                                                               \\
-    v_p                & = \frac{\omega}{\beta}                                                                                                                              \\
-    l_\texttt{elektr.} & = \beta \cdot l                                                                                                                                     \\
-    \alpha             & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\cdot\varepsilon^2}}- 1\right)}           \\
-    \beta              & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\cdot\varepsilon^2}}+ 1\right)}
+    \underline{U}(\ell)  & = U_h e^{\underline{\gamma} \ell} + U_r e^{-\underline{\gamma} \ell} \\
+    \underline{I}(\ell)  & = I_h e^{\underline{\gamma} \ell} + I_r e^{-\underline{\gamma} \ell} \\
+    \underline{Z}_L     & = \frac{U_h}{I_h} = \sqrt{ \frac{R + j \omega L}{G + j \omega C}}                                                                                   \\
+    \underline{\gamma}  & = \alpha + j\beta = \sqrt{(R+j\omega L)\cdot(G+j\omega C)}                                                                                                            \\
+    \lambda             & = \frac{2 \pi}{\beta} \qquad v_p = \frac{\omega}{\beta} \\
+    l_\texttt{elek.}    & = \beta \cdot l                                                                                                                                     \\
+    \alpha              & = \frac{C R+L G}{2 \sqrt{L C}}=\frac{R}{2 Z_L}+\frac{Z_L G}{2}=\alpha_L+\alpha_D \\
+    \beta               & = (j) \omega \sqrt{L C}
+\end{align*}
+\subsubsection{Reflexionsfaktor}
+\begin{align*}
+    \underline{r}(\ell)     & = \frac{\underline{U}_r(\ell)}{\underline{U}_h(\ell)} = -\frac{\underline{I}_r(\ell)}{\underline{I}_h(\ell)} = \frac{\underline{U}_r(\ell=0) \cdot \mathrm{e}^{-\mathrm{j} \beta \ell}}{\underline{U}_h(\ell=0) \cdot \mathrm{e}^{+\mathrm{j} \beta \ell}} \\
+                            & = \underline{r}(\ell=0) \cdot \mathrm{e}^{-2 \underline{\gamma} \ell}=\underline{r}(\ell=0) \cdot \mathrm{e}^{-2 \alpha \ell} \cdot \mathrm{e}^{-\mathrm{j} 2 \beta \ell}\\
+                            & = \frac{\frac{Z_L}{\underline{Z}(\ell)}-1}{\frac{Z_L}{\underline{Z}(\ell)}+1} \\
+    \underline{r}           & = \frac{\underline{z}_n-1}{\underline{z}_n+1} \qquad              \underline{z}_n=\frac{\underline{Z}_n}{Z_L}\\
+    \underline{r}(\ell = 0) & = \frac{\underline{U}_A-\underline{I}_A Z_L}{\underline{U}_A + \underline{I}_A Z_L}=\frac{\underline{Z}_A-Z_L}{\underline{Z}_A+Z_L}=\frac{\frac{\underline{Z}_A}{Z_L}-1}{\frac{\underline{Z}_A}{Z_L}+1}\\
+                    \alpha  & = -\frac{\ln(r_A)}{2l} [\si{Np/m}]  \qquad  \beta = \dfrac{\phi_2 -\phi_1}{2l} [\si{rad/m}]
 \end{align*}
 
-\subsubsection{Verlustlose Übertragungsleitung}
+\subsubsection{Verlustlose Übertragungsleitung }
 \begin{align*}
-    \underline{\gamma} & = j\omega\sqrt{LC}= j\beta                                                                                           \\
+    \beta              & = \omega\sqrt{LC} = \frac{2 \pi}{\lambda} = \frac{\omega}{v_p}\qquad \alpha = 0 \\
     Z_L                & =\frac{U_h}{U_r}       = \sqrt{\frac{L}{C}}                                                                          \\
     v_p                & = \frac{\omega}{\beta} = \frac{1}{\sqrt{LC}}= \frac{1}{\sqrt{\mu\varepsilon}}= \frac{c_0}{\sqrt{\mu_r\varepsilon_r}} \\
     \lambda            & = \frac{2\pi}{\beta}=\frac{1}{f\sqrt{LC}}= \frac{v_p}{f}= \frac{c_0}{f\sqrt{\mu_r\varepsilon_r}}
 \end{align*}
+
+
+\subsection{Übertragungsleitung mit Last}
+\input{Figures/Leitungen_Uebertragung_mit_Last.tex}
+
+
+% \subsubsection{Vorgehen Eingangswiderstand}
+% Wenn mit Smithdiagramm gearbeitet wird liefert dieses Schritte \ref{Ref L_anfang} und \ref{Bestimmen Z_E}
+% \begin{enumerate}
+%     \item Lastimpedanz
+%           \[ \underline{Z}_A = \dfrac{1}{\frac{1}{R_A} + j \omega C_A} \]
+%     \item Reflexion am Leitungsende
+%           \[ \underline{r}(z=0) = \dfrac{Z_A - \underline{Z}_L}{Z_A + \underline{Z}_L} \]
+%     \item Reflexion am Leitungsanfang \label{Ref L_anfang}
+%           \[ \underline{r}(\ell = -d) =  \underline{r}_A \cdot e^{-j 2 \beta d}\]
+%     \item Bestimmung der Impedanz \label{Bestimmen Z_E}
+%           \[ \underline{Z}_E = \underline{Z}_L \cdot \dfrac{1 + \underline{r}_E}{1 - \underline{r}_E}\]
+%     \item Eingangswiderstand
+%           \[ \underline{Z}_E = \dfrac{1}{\frac{1}{\underline{Z}_E} + j \omega C_E}\]
+% \end{enumerate}
+
+\subsubsection{Fall: Angepasste Leitung}
+\begin{align*}
+    Z_A          & = Z_L = Z(\ell)                              \\
+    r_A          & = 0\qquad\rightarrow\text{reflexionsfrei} \\
+    \mathrm{SWR} & = 1                                       \\
+    U(\ell)         & = U_h\cdot e ^{j\beta \ell}                  \\
+    I(\ell)         & = I_h \cdot e^{j\beta \ell}                  \\
+                 & = \frac{U_h}{Z_L}\cdot e^{j\beta \ell}
+\end{align*}
+
+\subsubsection{Fall: Kurzgeschlossene Leitung}
+\begin{align*}
+    Z_A          & = 0                                                                                         \\
+    Z(\ell)         & = j Z_L\cdot\tan(\beta \ell)        \qquad\rightarrow\text{rein imaginär}                      \\
+    r_A          & = -1                                                                                        \\
+    \mathrm{SWR} & = \infty                                                                                    \\
+    U(\ell)         & = U_h\cdot 2j\sin(\beta \ell)    \qquad\rightarrow U(\ell=0)=0                                    \\
+    \hat{U}_E    & = \hat{U}_{G}\cdot\frac{\underline{Z}_E}{\underline{Z}_{G}+\underline{Z}_E} \\
+    I(\ell)         & = U_h\cdot 2\cos(\beta \ell)    \qquad\rightarrow I(\ell=0)=I_A=\frac{2U_h}{Z_L}
+\end{align*}
+
+\subsubsection{Fall: Leerlaufende Leitung}
+\begin{align*}
+    Z_A          & = \infty                                                                         \\
+    Z(\ell)         & = -jZ_L\cdot \cot(\beta \ell) \qquad\rightarrow\text{rein imaginär}                 \\
+    r_A          & = 1                                                                              \\
+    \mathrm{SWR} & = \infty                                                                         \\
+    U(\ell)         & = U_h\cdot 2\cos(\beta \ell) \qquad\rightarrow U(\ell=0)=0                             \\
+    I(\ell)         & = U_h\cdot 2j\sin(\beta \ell) \qquad\rightarrow I(\ell=0)=I_A = \frac{2\cdot U_h}{Z_L}
+\end{align*}
+
+\subsubsection{Fall: Beliebiger Abschluss}
+\begin{align*}
+    \underline{U}(\ell) &= \underline{U}_A\left[\cos (\beta \ell)+\mathrm{j} \frac{\underline{Z}_L}{\underline{Z}_A} \sin (\beta \ell)\right] \\
+    \underline{I}(\ell) &= \underline{I}_A\left[\cos (\beta \ell)+\mathrm{j} \frac{\underline{Z}_A}{\underline{Z}_L} \sin (\beta \ell)\right] \\
+    \underline{Z}_E     &= \frac{U(-\ell)}{\underline{I}(-\ell)}= \underline{Z}_A \cdot \frac{1+j \frac{Z_W}{\underline{Z}_A} \tan \beta \ell}{1+j \frac{\underline{Z}_A}{Z_W} \tan \beta \ell} 
+\end{align*}
+Besonderheit bei $L=\frac{\lambda}{4}$ :
+$ \underline{Z}_E=\frac{Z_{W}^2}{\underline{Z}_A}$
+
+\subsubsection{Fall: Ohm'sch abgeschlossene Leitung}
+\begin{align*}
+                          & r_A = \texttt{reell} \\
+    \underline{R_A > Z_L} & \rightarrow\theta_r = 0 \rightarrow r_A \texttt{ ist negativ} \\
+                          & \rightarrow \ell_\texttt{max}=\frac{\lambda}{2}\cdot n \\
+    \underline{R_A < Z_L} & \rightarrow\theta_r = \pi                           \\
+                          & \rightarrow \ell_\texttt{min}=\frac{\lambda}{2}\cdot n
+\end{align*}
+
+\subsubsection{Stehwellenverhältnis/ Anpassungsfaktor}
+siehe auch Kap. \ref{sec:Smith_All}
+\begin{align*}
+    \mathrm{SWR}      & = \frac{U_\text{max}}{U_\text{min}} = \frac{I_\text{max}}{I_\text{min}} = \frac{1+|r(\ell)|}{1-|r(\ell)|} = \frac{|U_h|+|U_r|}{|U_h|-|U_r|} \\
+    m                 & = \frac{1}{\mathrm{SWR}} = \frac{1 - |r(\ell)|}{1 + |r(\ell)|}
+\end{align*}
+
 
 \subsubsection{vernachlässigbarer Widerstandsbelag}
 \includegraphics[width=\columnwidth]{Figures/vernachlaessigbarerWiderstandsbelag.png}
@@ -31,86 +111,6 @@
 \subsubsection{vernachlässigbarer Leitwertbelag}
 \includegraphics[width=\columnwidth]{Figures/vernachlaessigbarerLeiterwertbelag.png}
 
-\subsection{Übertragungsleitung mit Last}
-\input{Figures/Leitungen_Uebertragung_mit_Last.tex}
-\subsubsection{Reflexionsfaktor entlang der Leitung}
-\begin{align*}
-    \underline{r}(\ell) & = \underline{r}(\ell=0) \cdot \mathrm{e}^{-2 \underline{\gamma} \ell}=\underline{r}(\ell=0) \cdot \mathrm{e}^{-2 \alpha \ell} \cdot \mathrm{e}^{-\mathrm{j} 2 \beta \ell}\\
-    \alpha & = -\frac{\ln(r_A)}{2l} [\si{Np/m}]  \qquad  \beta = \dfrac{\phi_2 -\phi_1}{2l} [\si{rad/m}]
-\end{align*}
-
-\subsubsection{Vorgehen Eingangswiderstand}
-Wenn mit Smithdiagramm gearbeitet wird liefert dieses Schritte \ref{Ref L_anfang} und \ref{Bestimmen Z_E}
-\begin{enumerate}
-    \item Lastimpedanz
-          \[ \underline{Z}_A = \dfrac{1}{\frac{1}{R_A} + j \omega C_A} \]
-    \item Reflexion am Leitungsende
-          \[ \underline{r}(z=0) = \dfrac{Z_A - \underline{Z}_L}{Z_A + \underline{Z}_L} \]
-    \item Reflexion am Leitungsanfang \label{Ref L_anfang}
-          \[ \underline{r}(\ell = -d) =  \underline{r}_A \cdot e^{-j 2 \beta d}\]
-    \item Bestimmung der Impedanz \label{Bestimmen Z_E}
-          \[ \underline{Z}_E = \underline{Z}_L \cdot \dfrac{1 + \underline{r}_E}{1 - \underline{r}_E}\]
-    \item Eingangswiderstand
-          \[ \underline{Z}_E = \dfrac{1}{\frac{1}{\underline{Z}_E} + j \omega C_E}\]
-\end{enumerate}
-
-\newpage
-\subsubsection{Spezialfall: Angepasste Leitung}
-\begin{align*}
-    Z_A          & = Z_L = Z(z)                              \\
-    r_A          & = 0\qquad\rightarrow\text{reflexionsfrei} \\
-    \mathrm{SWR} & = 1                                       \\
-    U(z)         & = U_h\cdot e ^{j\beta z}                  \\
-    I(z)         & = I_h \cdot e^{j\beta z}                  \\
-                 & = \frac{U_h}{Z_L}\cdot e^{j\beta z}
-\end{align*}
-
-\subsubsection{Spezialfall: Kurzgeschlossene Leitung}
-\begin{align*}
-    Z_A          & = 0                                                                                         \\
-    Z(z)         & = j Z_L\cdot\tan(\beta z)        \qquad\rightarrow\text{rein imaginär}                      \\
-    r_A          & = -1                                                                                        \\
-    \mathrm{SWR} & = \infty                                                                                    \\
-    U(z)         & = U_h\cdot 2j\sin(\beta z)    \qquad\rightarrow U(z=0)=0                                    \\
-    \hat{U}_E    & = \hat{U}_{generator}\cdot\frac{\underline{Z}_E}{\underline{Z}_{generator}+\underline{Z}_E} \\
-    I(z)         & = U_h\cdot 2\cos(\beta z)    \qquad\rightarrow I(z=0)=I_A=\frac{2U_h}{Z_L}
-\end{align*}
-
-\subsubsection{Spezialfall: Leerlaufende Leitung}
-\begin{align*}
-    Z_A          & = \infty                                                                         \\
-    Z(z)         & = -jZ_L\cdot \cot(\beta z) \qquad\rightarrow\text{rein imaginär}                 \\
-    r_A          & = 1                                                                              \\
-    \mathrm{SWR} & = \infty                                                                         \\
-    U(z)         & = U_h\cdot 2\cos(\beta z) \qquad\rightarrow U(z=0)=0                             \\
-    I(z)         & = U_h\cdot 2j\sin(\beta z) \qquad\rightarrow I(z=0)=I_A = \frac{2\cdot U_h}{Z_L}
-\end{align*}
-
-\subsubsection{Spezialfall: Beliebiger Abschluss}
-\begin{align*}
-    \underline{U}(\ell) &= \underline{U}_2\left[\cos (\beta \ell)+\mathrm{j} \frac{\underline{Z}_L}{\underline{Z}_A} \sin (\beta \ell)\right] \\
-    \underline{I}(\ell) &= \underline{I}_2\left[\cos (\beta \ell)+\mathrm{j} \frac{\underline{Z}_A}{\underline{Z}_L} \sin (\beta \ell)\right] \\
-    \underline{Z}_1     &= \frac{U(-\ell)}{\underline{I}(-\ell)}= \underline{Z}_A \cdot \frac{1+j \frac{Z_W}{\underline{Z}_A} \tan \beta \ell}{1+j \frac{\underline{Z}_A}{Z_W} \tan \beta \ell} 
-\end{align*}
-Besonderheit bei $L=\frac{\lambda}{4}$ :
-$ \underline{Z}_1=\frac{Z_{W}^2}{\underline{Z}_A}$
-
-\subsubsection{Spezialfall: Ohm'sch abgeschlossene Leitung}
-\begin{align*}
-                          & r_A = \texttt{reell} \\
-    \underline{R_A > Z_L} & \rightarrow\theta_r = 0 \rightarrow r_A \texttt{ ist negativ} \\
-                          & \rightarrow z_\texttt{max}=\frac{\lambda}{2}\cdot n \\
-    \underline{R_A < Z_L} & \rightarrow\theta_r = \pi                           \\
-                          & \rightarrow z_\texttt{min}=\frac{\lambda}{2}\cdot n
-\end{align*}
-
-
-\subsubsection{Stehwellenverhältnis/ Anpassungsfaktor}
-siehe auch Kap. \ref{sec:Smith_All}
-\begin{align*}
-    \mathrm{SWR}      & = \frac{U_\text{max}}{U_\text{min}} = \frac{I_\text{max}}{I_\text{min}} = \frac{1+|r(z)|}{1-|r(z)|} = \frac{|U_H|+|U_R|}{|U_H|-|U_R|} \\
-    m                 & = \frac{1}{\mathrm{SWR}} = \frac{1 - |r(z)|}{1 + |r(z)|}
-\end{align*}
 
 \subsubsection{Leistung}
 \begin{align*}
@@ -120,7 +120,7 @@ siehe auch Kap. \ref{sec:Smith_All}
                      & = P_{\max} \cdot\left(1-r^{2}\right)                                                                          \\
                      & = \underline{U}_A\cdot\underline{I}_A^*                                                                       \\
     P_V              & = P_q -P_A                                                                                                    \\
-    \underline{I}(z) & = \hat{I}\cdot e^{-\alpha z}\angle \beta z
+    \underline{I}(\ell) & = \hat{I}\cdot e^{-\alpha \ell}\angle \beta \ell
 \end{align*}
 \subsubsection{Gleichspannungswert (=Endwert)}
 \begin{align*}
@@ -128,16 +128,11 @@ siehe auch Kap. \ref{sec:Smith_All}
 \end{align*}
 
 \subsubsection{Position von Extrema}
-\begin{gather*}
-    \boxed{r_A = |r_A|\cdot e^{-j\theta_r}}\rightarrow\theta_r\text{ in rad}\\
-    f_\texttt{min}\rightarrow \text{Minimum(Knoten) der Spannungen}\\
-    f_\texttt{max}\rightarrow \text{Maximum(Bäuche) der Spannungen}
-\end{gather*}
 \begin{align*}
-    \lambda_\texttt{min/max} & = \frac{c_0}{f_\texttt{min/max}\sqrt{\mu_{r1}\varepsilon_{r1}}}                                                                                                 \\
-    z_\texttt{min}           & =\frac{-n\cdot\lambda_\texttt{min}}{2}                                        \qquad\rightarrow n = -\frac{2z}{\lambda_\texttt{min}}                            \\
-    z_\texttt{max}           & =\frac{-(2n+1)\lambda_\texttt{max}}{4}                                        \qquad\rightarrow n = -\frac{4z+\lambda_\texttt{max}}{2\cdot\lambda_\texttt{max}} \\
-    z                        & = \frac{\lambda_\texttt{min}\cdot\lambda_\texttt{max}}{4(\lambda_\texttt{min}-\lambda_\texttt{max})}
+    \lambda_\texttt{min/max}    & = \frac{c_0}{f_\texttt{min/max}\sqrt{\mu_{r1}\varepsilon_{r1}}}\\
+    z_\texttt{min}              & =\frac{-n\cdot\lambda_\texttt{min}}{2}                                        \qquad\rightarrow n = -\frac{2z}{\lambda_\texttt{min}}                            \\
+    z_\texttt{max}              & =\frac{-(2n+1)\lambda_\texttt{max}}{4}                                        \qquad\rightarrow n = -\frac{4z+\lambda_\texttt{max}}{2\cdot\lambda_\texttt{max}} \\
+    z                           & = \frac{\lambda_\texttt{min}\cdot\lambda_\texttt{max}}{4(\lambda_\texttt{min}-\lambda_\texttt{max})}
 \end{align*}
 
 \subsection{Mehrfachreflexionen bei fehlender Anpassung}

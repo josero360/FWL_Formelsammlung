@@ -3,8 +3,8 @@
         \begin{circuitikz}%[american voltages]
             %Schaltbild
             \draw(0,0)
-            to[V,v=$u_G(t)$](0,2)                               %Spannungsquelle
-            to[R=$Z_g$](3,2)                                    %Quelleninnenwiderstand
+            to[V,v=$U_G(t)$](0,2)                               %Spannungsquelle
+            to[R=$Z_G$](3,2)                                    %Quelleninnenwiderstand
             to[short,o-o](7,2)                                  %Leitung mit Knoten
             to[short](8 ,2)
             to[R=$Z_A$](8,0)                                    %Lastwiderstand
@@ -19,6 +19,7 @@
                  (3,2.6) -- node[above=6pt] {$\underline{Z}_L$} (7,2.6);
             
             %linke gestrichelte linie
+            \draw[dotted](3,2)--(3,0);
             \draw[dotted](3,0)--(3,-0.5) node[left]{$l=-d$};
             \draw[dotted](3,-0.5)--(3,-1) node[left]{$z=d$};
             \draw[dotted](3,-1)--(3,-1.5);
@@ -28,6 +29,7 @@
             \node at (4,-0.5)[above]{positiv $l$};
             
             %rechte gestrichelte Linue
+            \draw[dotted](7,2)--(7,0);
             \draw[dotted](7,0)--(7,-0.5) node[right]{$l=0$};          
             \draw[dotted](7,-0.5)--(7,-1) node[right]{$z=0$};
             \draw[dotted](7,-1)--(7,-1.5);
@@ -46,7 +48,7 @@
 
             %Pfeil Eingangs Widerstand
             \draw[-latex](1,0.5) -- (2.8,0.5);
-            \node at (2,0.5)[above]{$\underline{Z}_E$};
+            \node at (2,0.5)[above]{$\underline{Z}_E = \underline{Z}(\ell = -d)$};
         \end{circuitikz}
 }
 \end{center}
