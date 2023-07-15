@@ -17,7 +17,7 @@
                             & = \frac{\frac{Z_L}{\underline{Z}(\ell)}-1}{\frac{Z_L}{\underline{Z}(\ell)}+1} \\
     \underline{r}           & = \frac{\underline{z}_n-1}{\underline{z}_n+1} \qquad              \underline{z}_n=\frac{\underline{Z}_n}{Z_L}\\
     \underline{r}(\ell = 0) & = \frac{\underline{U}_A-\underline{I}_A Z_L}{\underline{U}_A + \underline{I}_A Z_L}=\frac{\underline{Z}_A-Z_L}{\underline{Z}_A+Z_L}=\frac{\frac{\underline{Z}_A}{Z_L}-1}{\frac{\underline{Z}_A}{Z_L}+1}\\
-                    \alpha  & = -\frac{\ln(r_A)}{2l} [\si{Np/m}]  \qquad  \beta = \dfrac{\phi_2 -\phi_1}{2l} [\si{rad/m}]
+                    \alpha  & = -\frac{\ln(\frac{r_A}{r_E})}{2l} [\si{Np/m}]  \qquad  \beta = \dfrac{\phi_E -\phi_A}{2l} \left[\cdot\frac{\pi}{180^\circ}\right] [\si{rad/m}]
 \end{align*}
 
 \subsubsection{Verlustlose Übertragungsleitung }
@@ -72,7 +72,7 @@
 \subsubsection{Fall: Leerlaufende Leitung}
 \begin{align*}
     Z_A          & = \infty                                                                         \\
-    Z(\ell)         & = -jZ_L\cdot \cot(\beta \ell) \qquad\rightarrow\text{rein imaginär}                 \\
+    Z(\ell)         & = -jZ_L\cdot \frac{1}{\tan (\beta \ell)} \qquad\rightarrow\text{rein imaginär}                 \\
     r_A          & = 1                                                                              \\
     \mathrm{SWR} & = \infty                                                                         \\
     U(\ell)         & = U_h\cdot 2\cos(\beta \ell) \qquad\rightarrow U(\ell=0)=0                             \\
@@ -218,14 +218,12 @@ Für Sinus-Anregung:
     \end{tabularx}}
 
 \subsubsection{Koaxial Leitung}
-{\small\[
-        a = \text{innen Radius} \qquad b = \text{außen Radius} \\
-    \]}
 \begin{align*}
+    a                     & = \text{innen Radius} \qquad b = \text{außen Radius} \\
+    r                     &< a \text{ und } r > b \Rightarrow \vec{E}, \vec{H} = 0 \\
     \vec{H}(r, z)         & = \frac{\hat{I}}{2\pi r}\cdot e^{-j\beta z}\cdot\vec{e}_\varphi                   \\
-    \vec{E}(r, z)         & = \frac{\hat{I}}{2\pi r}\cdot Z_{F0}\cdot e^{-j\beta z} \cdot\vec{e}_r
-                          & = \frac{\hat{U}}{r \cdot\ln{(^{b}/_{a})}}\cdot e^{-j\beta z}\cdot\vec{e}_r        \\
-    \vec{S}_{zeit.Mittel} & = \frac{1}{2}\cdot\left[\frac{\hat{I}}{2\pi r}\right]^2\cdot Z_{F0}\cdot\vec{e}_z
+    \vec{E}(r, z)         & = \frac{\hat{I}}{2\pi r}\cdot Z_{L}\cdot e^{-j\beta z} \cdot\vec{e}_r = \frac{\hat{U}}{r \cdot\ln{(^{b}/_{a})}}\cdot e^{-j\beta z}\cdot\vec{e}_r        \\
+    \vec{S}_{zeit.Mittel} & = \frac{1}{2}\cdot\left[\frac{\hat{I}}{2\pi r}\right]^2\cdot Z_{L}\cdot\vec{e}_z
 \end{align*}
 \input{Figures/Leitungen_Koaxialleitung.tex}
 {\renewcommand*{\arraystretch}{0.2}
