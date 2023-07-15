@@ -10,11 +10,11 @@
 \subsubsection*{Wellengleichung}
 \underline{Tatsächlicher Zeitverlauf}(Realteil von $\underline{\vec{E}}(z,t)$)
 \begin{empheq}[]{align*}
-    \boxed{\vec{E}(z,t)
-    = \underbrace{E_0}_{\mathclap{\text{Amplitude}}}
+    \vec{E}(z,t)
+    = E_0
     \cdot \overbrace{e^{-\alpha z}}^{\mathclap{\text{Dämpfung}}}
-    \cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} k z)}_\text{Zeit- und Raumabhängigkeit (Wellenzahl)}
-    \cdot\vec{e}_z}
+    \cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} \beta z)}_\text{Zeit- \& Raumausb. (Wellenz./S)}
+    \cdot \overbrace{\vec{e}_z}^{\mathclap{\text{Feldausb.}}}
 \end{empheq}
 \underline{Komplexer Amplitudenvektor}
 \begin{empheq}[]{align*}
@@ -42,20 +42,20 @@ $v_g$ : Gruppengeschwindigkeit [m/s]
 \textbf{Wellenzahl:}
 Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
 \begin{align*}
-    k & = \frac{\omega}{v_p} = \frac{2 \pi f}{v_p} = |\vec{k}|                                                                      \\
+    \beta & = \frac{\omega}{v_p} = \frac{2 \pi f}{v_p} = |\vec{\beta}|                                                                      \\
       & = \frac{\omega \cdot n}{c_{0}} = n \cdot k_{0}=\frac{1}{\sqrt{\mu_{r} \cdot \varepsilon_{r}}} \cdot k_{0}=k_{r} \cdot k_{0}
 \end{align*}
 
 \textbf{Wellenlänge:}
 \begin{align*}
-    \lambda   & = \dfrac{\lambda_0}{\sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{2 \pi}{k} = \dfrac{v_p}{f} = [m] \\
+    \lambda   & = \dfrac{\lambda_0}{\sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{2 \pi}{\beta} = \dfrac{v_p}{f} = [m] \\
               & = \dfrac{\lambda_0}{n} = \dfrac{2 \pi}{n \cdot k_0}                                             \\
     \lambda_0 & = \dfrac{c_0}{f} = \dfrac{2\pi}{k_0}
 \end{align*}
 
 \textbf{Phasengeschwindigkeit:}
 \[
-    v_p = \dfrac{\omega}{k} = \frac{c_0}{\sqrt{ \mu_r \varepsilon_r }}  = \frac{1}{\sqrt{ \mu_r \mu_0 \varepsilon_r \varepsilon_0}} \qquad v_{p,\texttt{Medium} \leq c_0}
+    v_p = \dfrac{\omega}{\beta} = \frac{c_0}{\sqrt{ \mu_r \varepsilon_r }}  = \frac{1}{\sqrt{ \mu_r \mu_0 \varepsilon_r \varepsilon_0}} \qquad v_{p,\texttt{Medium} \leq c_0}
 \]
 
 
@@ -72,7 +72,7 @@ Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
 \subsubsection{Im leeren Raum(Vakuum)}
 \begin{align*}
     \alpha                     & = 0                                                                    \\
-    k                          & = \dfrac{\omega}{c_0}                                                  \\
+    \beta                          & = \dfrac{\omega}{c_0}                                                  \\
     \lambda                    & = \dfrac{c_0}{f}                                                       \\
     v_p                        & = c_0                                                                  \\
     \Aboxed{\underline{Z}_{F0} & = \sqrt{\dfrac{\mu_0}{\varepsilon_0}} = 120 \pi\Omega\approx377\Omega}
@@ -84,7 +84,7 @@ verlustlos: $\kappa =0$, maximale Wirkleistung
 $Z_F$ rein reel $\rightarrow$ ebene Welle
 \begin{align*}
     \alpha                  & = 0                                                                                              \\
-    k                       & = \dfrac{\omega}{c_0}\sqrt{\mu_r\varepsilon_r}=\omega\sqrt{\mu\varepsilon}=\dfrac{2\pi}{\lambda} \\
+    \beta                       & = \dfrac{\omega}{c_0}\sqrt{\mu_r\varepsilon_r}=\omega\sqrt{\mu\varepsilon}=\dfrac{2\pi}{\lambda} \\
     \lambda                 & = \dfrac{c_0}{f}\dfrac{1}{\sqrt{\mu_r\varepsilon_r}}                                             \\
     v_p                     & = \dfrac{c_0}{\sqrt{\mu_r\varepsilon_r}}                                                         \\
     \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}}
