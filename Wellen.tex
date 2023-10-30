@@ -1,32 +1,29 @@
 \section{Wellen}
 \begin{itemize}
     \setlength\itemsep{1pt}
-    \item raumzeitlicher Vorgang $cos(\omega t- \beta z)$
     \item Energie- ohne Materietransport
-    \item Poyntingvektor $\vec{S}=\vec{E}\times\vec{H} \left[ \dfrac{W}{m^2} \right]$\\
-        {\footnotesize Falls $\vec{E}\perp\vec{H}$ und $\vec{S}\perp\vec{E}$ und $\vec{S}\perp\vec{H}$}
 \end{itemize}
 
 \subsubsection*{Wellengleichung}
 \underline{Tatsächlicher Zeitverlauf}(Realteil von $\underline{\vec{E}}(z,t)$)
 \begin{empheq}[]{align*}
-    \boxed{\vec{E}(z,t)
-    = \underbrace{E_0}_{\mathclap{\text{Amplitude}}}
+    \vec{E}(z,t)
+    = E_0
     \cdot \overbrace{e^{-\alpha z}}^{\mathclap{\text{Dämpfung}}}
-    \cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} k z)}_\text{Zeit- und Raumabhängigkeit (Wellenzahl)}
-    \cdot\vec{e}_z}
+    \cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} \beta z)}_\text{Zeit- \& Raumausb. (Wellenz./S)}
+    \cdot \overbrace{\vec{e}_y}^{\mathclap{\text{Feldausb.}}}
 \end{empheq}
 \underline{Komplexer Amplitudenvektor}
 \begin{empheq}[]{align*}
     \boxed{\underline{\vec{E}}(z,t)
-        = E_0\cdot e^{-\alpha z}\cdot e^{j(\omega t-\beta z)}\cdot\vec{e}_z
-        = E_0\cdot e^{-\underline{\gamma}z}\cdot e^{j\omega t}\cdot\vec{e}_z
+        = E_0\cdot e^{-\alpha z}\cdot e^{j(\omega t-\beta z)}\cdot\vec{e}_y
+        = E_0\cdot e^{-\underline{\gamma}z}\cdot e^{j\omega t}\cdot\vec{e}_y
     }
 \end{empheq}
 
 \underline{Fortpflanzungskonstante $\gamma$}
 \[\boxed{\underline{\gamma}=\alpha+j\beta}\]
-
+ 
 $\alpha$ : Dämpfungskonstante [Np/m]
 
 $\beta$ : Phasenkonstante [rad/m]
@@ -40,22 +37,22 @@ $v_g$ : Gruppengeschwindigkeit [m/s]
 \[ n = \dfrac{c_0}{c} = \sqrt{\epsilon_r} \geq 1 \]
 
 \textbf{Wellenzahl:}
-Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
+Im Vakuum: $\beta_{0}=\frac{\omega}{c_{0}}$
 \begin{align*}
-    k & = \frac{\omega}{v_p} = \frac{2 \pi f}{v_p} = |\vec{k}|                                                                      \\
-      & = \frac{\omega \cdot n}{c_{0}} = n \cdot k_{0}=\frac{1}{\sqrt{\mu_{r} \cdot \varepsilon_{r}}} \cdot k_{0}=k_{r} \cdot k_{0}
+    \beta & = \frac{\omega}{c_0} = \frac{2 \pi f}{v_p} = |\vec{\beta}|                                                                      \\
+      & = \frac{\omega \cdot n}{c_{0}} = n \cdot \beta_{0}=\sqrt{\mu_{r} \cdot \varepsilon_{r}} \cdot \beta_{0}
 \end{align*}
 
 \textbf{Wellenlänge:}
 \begin{align*}
-    \lambda   & = \dfrac{\lambda_0}{\sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{2 \pi}{k} = \dfrac{v_p}{f} = [m] \\
+    \lambda   & = \dfrac{\lambda_0}{\sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{2 \pi}{\beta} = \dfrac{v_p}{f} = [m] \\
               & = \dfrac{\lambda_0}{n} = \dfrac{2 \pi}{n \cdot k_0}                                             \\
     \lambda_0 & = \dfrac{c_0}{f} = \dfrac{2\pi}{k_0}
 \end{align*}
 
 \textbf{Phasengeschwindigkeit:}
 \[
-    v_p = \dfrac{\omega}{k} = \frac{c_0}{\sqrt{ \mu_r \varepsilon_r }}  = \frac{1}{\sqrt{ \mu_r \mu_0 \varepsilon_r \varepsilon_0}} \qquad v_{p,\texttt{Medium} \leq c_0}
+    v_p = \dfrac{\omega}{\beta} = \frac{c_0}{\sqrt{ \mu_r \varepsilon_r }}  = \frac{1}{\sqrt{ \mu_r \mu_0 \varepsilon_r \varepsilon_0}} \qquad v_{p,\texttt{Medium} \leq c_0}
 \]
 
 
@@ -66,13 +63,13 @@ Im Vakuum: $k_{0}=\frac{\omega}{c_{0}}$
     v_p                     & = \lambda\cdot f = \dfrac{\omega}{\beta}                                                                                                    \\
     \alpha                  & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\kappa^2}{\omega^2\cdot\varepsilon^2}} - 1\right)}   \\
     \beta                   & = \omega \cdot \sqrt{\dfrac{\mu \varepsilon}{2}\cdot \left(\sqrt{1+\dfrac{\kappa^2}{\omega^2\cdot\varepsilon^2}} + 1\right)} \\
-    \Aboxed{\underline{Z}_F & = \dfrac{\underline{E}}{\underline{H}} = \sqrt{\dfrac{j\omega\mu}{\kappa+j\omega\varepsilon}} = \dfrac{1}{n}\sqrt{\dfrac{\mu_0}{\varepsilon_0}} = Z_{F0} \cdot \sqrt{\dfrac{\mu_r}{\varepsilon_r }}}                                              \\
+    \Aboxed{\underline{Z}_F & = \dfrac{\underline{E}}{\underline{H}} = \dfrac{j\omega\mu}{\underline{\gamma}} = \dfrac{1}{n}\sqrt{\dfrac{\mu_0}{\varepsilon_0}} = Z_{F0} \cdot \sqrt{\dfrac{\mu_r}{\varepsilon_r }}}                                              \\
 \end{align*}
 
 \subsubsection{Im leeren Raum(Vakuum)}
 \begin{align*}
     \alpha                     & = 0                                                                    \\
-    k                          & = \dfrac{\omega}{c_0}                                                  \\
+    \beta                          & = \dfrac{\omega}{c_0}                                                  \\
     \lambda                    & = \dfrac{c_0}{f}                                                       \\
     v_p                        & = c_0                                                                  \\
     \Aboxed{\underline{Z}_{F0} & = \sqrt{\dfrac{\mu_0}{\varepsilon_0}} = 120 \pi\Omega\approx377\Omega}
@@ -84,7 +81,7 @@ verlustlos: $\kappa =0$, maximale Wirkleistung
 $Z_F$ rein reel $\rightarrow$ ebene Welle
 \begin{align*}
     \alpha                  & = 0                                                                                              \\
-    k                       & = \dfrac{\omega}{c_0}\sqrt{\mu_r\varepsilon_r}=\omega\sqrt{\mu\varepsilon}=\dfrac{2\pi}{\lambda} \\
+    \beta                       & = \dfrac{\omega}{c_0}\sqrt{\mu_r\varepsilon_r}=\omega\sqrt{\mu\varepsilon}=\dfrac{2\pi}{\lambda} \\
     \lambda                 & = \dfrac{c_0}{f}\dfrac{1}{\sqrt{\mu_r\varepsilon_r}}                                             \\
     v_p                     & = \dfrac{c_0}{\sqrt{\mu_r\varepsilon_r}}                                                         \\
     \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}}
@@ -98,7 +95,7 @@ geringer Verlust: $\dfrac{\kappa}{\omega\varepsilon} \ll 1$
     \beta                   & \approx\omega\sqrt{\mu\varepsilon}\left(1+\dfrac{1}{8}\cdot\dfrac{\kappa^2}{\omega^2\varepsilon^2}\right)                                                  \\
     \lambda                 & = \dfrac{c_0}{f}\cdot\dfrac{1}{\sqrt{\mu_r\varepsilon_r}}\cdot\frac{1}{1+\frac{1}{8}\left(\frac{\kappa}{\omega\varepsilon}\right)^2}                       \\
     v_p                     & = \dfrac{c_0}{\sqrt{\mu_r\varepsilon_r}}\cdot\frac{1}{1+\frac{1}{8}\left(\frac{\kappa}{\omega\varepsilon}\right)^2}                                        \\
-    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}\left(1-\frac{j\kappa}{\omega\varepsilon}\right)^{-^1/2} \approx Z_{F0}\left(1+\frac{j\kappa}{2\omega\varepsilon}\right)}
+    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}\left(1-\frac{j\kappa}{\omega\varepsilon}\right)^{-^1/2} = Z_{F0}\left(1+\frac{j\kappa}{2\omega\varepsilon}\right)}
 \end{align*}
 
 \subsubsection{Im guten Leiter}
@@ -107,7 +104,7 @@ geringer Verlust: $\dfrac{\kappa}{\omega\varepsilon} \gg 1$
     \alpha                  & \approx \beta \approx\sqrt{\frac{\omega\mu\kappa}{2}}=\dfrac{1}{\delta}\sim\sqrt{f} \\
     \lambda                 & = 2\pi \sqrt{\dfrac{2}{\omega\mu\kappa}}=2\pi\delta                                 \\
     v_p                     & = \frac{2\pi}{\beta} = \omega\delta                                                 \\
-    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{j\omega\mu}{\kappa}} \approx \dfrac{1+j}{\kappa\cdot\delta}}
+    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{j\omega\mu}{\kappa}} = \dfrac{1+j}{\kappa\cdot\delta}}
 \end{align*}
 \newpage
 \subsection{Übergang}
@@ -235,7 +232,7 @@ sehr gute Leiter
 \begin{align*}
     \sin\alpha_g & = \frac{n_2}{n_1} = \sqrt{ \frac{\varepsilon_{r2}\mu_{r2}}{\varepsilon_{r1}\mu_{r1}}}\\
     \alpha_g & = \sin^{-1} \left( \sqrt{ \dfrac{\mu_{r2} \varepsilon_{r2}}{\mu_{r1} \varepsilon_{r1}}} \right)\\
-    \dfrac{\sin \alpha_{2}}{\sin \alpha_{1}} = \dfrac{k_{h}}{k_{g}} & = \sqrt{\dfrac{\mu_{r 1} \varepsilon_{r 1}}{\mu_{r 2} \varepsilon_{r 2}}} = \dfrac{n_{1}}{n_{2}} = \dfrac{v_{p, 2}}{v_{p, 1}} = \dfrac{\lambda_{2}}{\lambda_{1}} \\
+    \dfrac{\sin \alpha_{2}}{\sin \alpha_{1}} = \dfrac{\beta_{h}}{\beta_{g}} & = \sqrt{\dfrac{\mu_{r 1} \varepsilon_{r 1}}{\mu_{r 2} \varepsilon_{r 2}}} = \dfrac{n_{1}}{n_{2}} = \dfrac{v_{p, 2}}{v_{p, 1}} = \dfrac{\lambda_{2}}{\lambda_{1}} \\
 \end{align*}
 
 \subsection{Stehwellenverhältnis}
