@@ -268,14 +268,6 @@ quellen- und wirbelfreies Vektorfeld $\vec{F}$:
 %\textit{Pegel}: feste Bezugsgröße $ P_0 $\\
 %\textit{Maß}: beliebige Bezugsgröße $ P_2 $ bzw. Differenz zweier Pegel\\
 
-
-% \subsection{Begriffe}
-% \begin{tabularx}{0.45\textwidth}{>{\hsize=.1\hsize}X|>{\hsize=.5\hsize}X|>{\hsize=.4\hsize}X}
-%            & Begriff           & Beschreibung \\
-%     \hline
-%     $\rho$ & Raumladungsdichte &              \\
-% \end{tabularx}
-
 \subsubsection{Rechnen mit Pegeln / Logarithmen}
 Rechenregeln für Logarithmen (10er-Basis): \quad $ x,y,a > 0 $
 \begin{flalign*}
@@ -304,8 +296,15 @@ $a$: Basis \qquad $m,n$: Exponent
 \end{flalign*}
 
 
-\subsection{Koordinatensysteme}
+\subsection{Integralsätze}
+\begin{align*}
+    \int_{a}^b \opgrad F \cdot d \vec{s}     & = F(b) - F(a)                                  \\
+    \iiint_V \opdiv \vec{A} \cdot dV         & = \oiint_{ \partial V} \vec{A} \cdot d \vec{a} \\
+    \iint_{A} \oprot \vec{A} \cdot d \vec{a} & = \oint_{ \partial A} \vec{A} \cdot d \vec{r}
+\end{align*}
 
+
+\subsection{Koordinatensysteme}
 
 \subsubsection{Umrechnungstabelle}
 \begin{tabularx}{0.45\textwidth}{>{\hsize=.46\hsize}X|>{\hsize=.27\hsize}X|>{\hsize=.27\hsize}X}
