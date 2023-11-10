@@ -8,9 +8,11 @@ Materialgleichungen
     \Aboxed{ rot \vec{H} = \vec{J} = \sigma \cdot \vec{E}} &
 \end{align*}
 
-$\boxed{\int_c \vec{H} d \vec{s} = \Theta = I = \iint_A \vec{J} d \vec{A} = \frac{d\Phi_e}{dt}}$ \\
-$\boxed{\oint{\vec{E}d\vec{s}} = u_{ind} = -\frac{d}{dt}\iint{\vec{B}d\vec{A}} = -\frac{d\Phi_m}{dt}}$ \\
-$\boxed{rot{\vec{E}} = -\frac{\partial\vec{B}}{\partial t} = -\mu\cdot\frac{\partial\vec{H}}{\partial t} = -j\omega\mu\vec{H}}$
+\begin{align*}
+    \Aboxed{&\oint{\vec{H} \, d\vec{s}} = \Theta = I = \iint_A \vec{J}  \, d\vec{A} = \frac{d\Phi_e}{dt}} \\
+    \Aboxed{&\oint{\vec{E} \, d\vec{s}} = u_{ind} = -\frac{d}{dt}\iint{\vec{B} \, d\vec{A}} = -\frac{d\Phi_m}{dt}} \\
+    \Aboxed{&rot{\vec{E}} = -\frac{\partial\vec{B}}{\partial t} = -\mu\cdot\frac{\partial\vec{H}}{\partial t} = -j\omega\mu\vec{H}}
+\end{align*}
 
 Feldunterscheidung
 \begin{align*}
@@ -25,7 +27,9 @@ Feldes
 \begin{align*}
     \Aboxed{\opdiv \vec{D} & = \nabla \cdot \vec{D}  = \rho}\\
     \Aboxed{\oprot \vec{E} & = \nabla \times \vec{E} = 0} \quad \Aboxed{\oprot \opgrad E & = 0}\\
-    \Aboxed{\vec{E} & = - \opgrad \varphi}
+    \Aboxed{\vec{E} & = - \opgrad \varphi} \\
+    Q &= \iiint_V \rho \, dV \\
+    U_{ab} &= \int_{a}^{b} E \, ds
 \end{align*}
 
 \subsubsection{Potential Gleichung}
