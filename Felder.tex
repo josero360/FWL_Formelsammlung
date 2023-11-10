@@ -2,15 +2,12 @@
 \subsection{Zusammenhänge}
 Materialgleichungen
 \begin{align*}
-    \Aboxed{\vec{J}  = \kappa\vec{E}} &
-    \Aboxed{\vec{B}  = \mu\vec{H}}    &
-    \Aboxed{\vec{D}  = \varepsilon\vec{E}}\\
+    \Aboxed{\vec{J}  = \kappa\vec{E}} & \Aboxed{\vec{B}  = \mu\vec{H}}    & \Aboxed{\vec{D}  = \varepsilon\vec{E}}\\
     \Aboxed{ rot \vec{H} = \vec{J} = \sigma \cdot \vec{E}} &
 \end{align*}
-
 \begin{align*}
-    \Aboxed{&\oint{\vec{H} \, d\vec{s}} = \Theta = I = \iint_A \vec{J}  \, d\vec{A} = \frac{d\Phi_e}{dt}} \\
-    \Aboxed{&\oint{\vec{E} \, d\vec{s}} = u_{ind} = -\frac{d}{dt}\iint{\vec{B} \, d\vec{A}} = -\frac{d\Phi_m}{dt}} \\
+    \Aboxed{&\oint_s{\vec{H} \, d\vec{s}} = \Theta = I = \iint_A \vec{J}  \, d\vec{A} = \frac{d\Phi_e}{dt}} \\
+    \Aboxed{&\oint_s{\vec{E} \, d\vec{s}} = u_{ind} = -\frac{d}{dt}\iint{\vec{B} \, d\vec{A}} = -\frac{d\Phi_m}{dt}} \\
     \Aboxed{&rot{\vec{E}} = -\frac{\partial\vec{B}}{\partial t} = -\mu\cdot\frac{\partial\vec{H}}{\partial t} = -j\omega\mu\vec{H}}
 \end{align*}
 
@@ -26,10 +23,9 @@ Feldunterscheidung
 Feldes
 \begin{align*}
     \Aboxed{\opdiv \vec{D} & = \nabla \cdot \vec{D}  = \rho}\\
-    \Aboxed{\oprot \vec{E} & = \nabla \times \vec{E} = 0} \quad \Aboxed{\oprot \opgrad E & = 0}\\
+    \Aboxed{\oprot \vec{E} & = \nabla \times \vec{E} = 0} & \Aboxed{\oprot \opgrad E & = 0}\\
     \Aboxed{\vec{E} & = - \opgrad \varphi} \\
-    Q &= \iiint_V \rho \, dV \\
-    U_{ab} &= \int_{a}^{b} E \, ds
+    Q &= \iiint_V \rho \, dV & U_{ab} = \int_{a}^{b} E \, ds
 \end{align*}
 
 \subsubsection{Potential Gleichung}
@@ -111,9 +107,8 @@ mit der Green'schen Funktion $G\left(\vec{r}, \vec{r}^{\,\prime}\right)=\frac{1}
 \textbullet keine magnetischen Monopole $grad \vec{B} = 0$\\
 \textbullet Vektorpotential $ \vec{A}$ = Maß für $\Phi_{magn} $ durch Fläche A
 \begin{align*}
-    \Aboxed{\oprot \vec{H} = \nabla \times \vec{H} & = \vec{J} }          & \vec{B} & = \mu \vec{H}           \\
-    \vec{H}                                        & = - \nabla \varphi_m &                                   \\
-    \Aboxed{\opdiv \vec{B} = \nabla \cdot \vec{B}  & = 0 }                &         & = \opdiv \oprot \vec{B}
+    \Aboxed{\oprot \vec{H} = \nabla \times \vec{H} & = \vec{J} } & \vec{H} = - \nabla \varphi_m \\
+    \Aboxed{\opdiv \vec{B} = \nabla \cdot \vec{B}  & = 0 } & \Aboxed{\opdiv \oprot \vec{B} = 0}
 \end{align*}
 \textbf{Coulomb-Eichung}
 \begin{align*}
