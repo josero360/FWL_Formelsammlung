@@ -5,24 +5,28 @@
 \end{itemize}
 
 \subsubsection*{Wellengleichung}
-\underline{Tatsächlicher Zeitverlauf}(Realteil von $\underline{\vec{E}}(z,t)$)
-\begin{empheq}[]{align*}
+\textbf{Tatsächlicher Zeitverlauf:} (Realteil von $\underline{\vec{E}}(z,t)$)
+\begin{align*}
     \vec{E}(z,t)
-    = E_0
-    \cdot \overbrace{e^{-\alpha z}}^{\mathclap{\text{Dämpfung}}}
-    \cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} \beta z)}_\text{Zeit- \& Raumausb. (Wellenz./S)}
-    \cdot \overbrace{\vec{e}_y}^{\mathclap{\text{Feldausb.}}}
-\end{empheq}
-\underline{Komplexer Amplitudenvektor}
-\begin{empheq}[]{align*}
-    \boxed{\underline{\vec{E}}(z,t)
-        = E_0\cdot e^{-\alpha z}\cdot e^{j(\omega t-\beta z)}\cdot\vec{e}_y
-        = E_0\cdot e^{-\underline{\gamma}z}\cdot e^{j\omega t}\cdot\vec{e}_y
-    }
-\end{empheq}
+        &= E_0
+        \cdot \overbrace{e^{-\alpha z}}^{\mathclap{\text{Dämpfung}}}
+        \cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} \beta z)}_\text{Zeit- \& Raumausb. (Wellenz./S)}
+        \cdot \overbrace{\vec{e}_y}^{\mathclap{\text{Feldausb.}}} \\
+    \vec{H}(z,t)
+        &= - H_0 \cdot cos(\omega t - \beta z) \cdot \vec{e}_x \qquad \text{wenn $Z_F$ reel}
+\end{align*}
+\vspace{2ex}
 
-\underline{Fortpflanzungskonstante $\gamma$}
-\[\boxed{\underline{\gamma}=\alpha+j\beta}\]
+\textbf{Komplexer Amplitudenvektor:}
+\begin{empheq}[]{align*}
+    \underline{\vec{E}}(z,t)
+    = E_0\cdot e^{-\alpha z}\cdot e^{j(\Delta\varphi + \omega t-\beta z)}\cdot\vec{e}_y
+    = E_0\cdot e^{-\underline{\gamma}z}\cdot e^{j\omega t}\cdot\vec{e}_y
+\end{empheq}
+\vspace{2ex}
+
+\textbf{Fortpflanzungskonstante $\gamma$:}
+\[\underline{\gamma}=\alpha+j\beta\]
  
 $\alpha$ : Dämpfungskonstante [Np/m]
 
@@ -69,9 +73,9 @@ Im Vakuum: $\beta_{0}=\frac{\omega}{c_{0}}$
 \subsubsection{Im leeren Raum(Vakuum)}
 \begin{align*}
     \alpha                     & = 0                                                                    \\
-    \beta                          & = \dfrac{\omega}{c_0}                                                  \\
+    \beta                      & = \dfrac{\omega}{c_0}                                                  \\
     \lambda                    & = \dfrac{c_0}{f}                                                       \\
-    v_p                        & = c_0                                                                  \\
+    v_p                        & = c_0        \qquad  \omega = \beta \cdot c_0                                \\
     \Aboxed{\underline{Z}_{F0} & = \sqrt{\dfrac{\mu_0}{\varepsilon_0}} = 120 \pi\Omega\approx377\Omega}
 \end{align*}
 
