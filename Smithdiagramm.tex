@@ -30,12 +30,22 @@ $1$             : Anpassungspunkt
 \subsection{Impedanz/Admetanz umrechnen}
 Im Smithchart spiegeln (Phase $\pm 180^{\circ}$/$\pm \pi$)
 
-\subsection{Zusammenschaltungen}
-% \begin{center}
-%     \includegraphics[width=.45\columnwidth]{Figures/Smithdiagramm_Zusammenschaltungen.png}
-% \end{center}
+\subsection{Maxima/Minima bei stehender Welle}\label{sec:max_min_stehende_welle}
+Bei \textbf{verlustloser} Leitung:
+\begin{align*}
+	 & U_{\texttt{max}} = |U_h| \cdot (1+|r(l)|)                            & U_{\texttt{min}} = |U_h| \cdot (1-|r(l)|)                           & \\
+	 & I_{\texttt{max}} = \left | \frac{U_h}{Z_L} \right | \cdot (1+|r(l)|) & I_{\texttt{min}} = \left| \frac{U_h}{Z_L} \right | \cdot (1-|r(l)|) &
+\end{align*}
 
-\columnbreak
+Für \textbf{Spannungen}: Abstand von der Last $ z $: \quad $ n=0,1,2,3... $
+\begin{align*}
+	                                                                                    & z_{\texttt{min}} = \frac{\lambda}{4\pi}(\theta_{rad}+(2n+1)\pi)                             &
+	z_{\texttt{max}} = \frac{\lambda}{4\pi} \cdot (\theta_{rad}+2n\pi)                  &                                                                                               \\
+	\Aboxed{                                                                            & \text{\textbf{Minima} alle}\: \frac{\lambda}{2} \rightarrow \frac{l}{\lambda}=0.5} \Aboxed{ &
+	\text{\textbf{Maxima} alle}\: \frac{\lambda}{4} \rightarrow \frac{l}{\lambda}=0.25} &
+\end{align*}
+$ \rightarrow $ Schnittpunkte mit der reellen Achse!\\
+Strommaxima sind an Spannungsminima und umgekehrt.
 
 \subsection[Von Last zu Quelle]{Lastseite $\rightarrow$ Quelle}
 \begin{enumerate}
@@ -75,5 +85,21 @@ Im Smithchart spiegeln (Phase $\pm 180^{\circ}$/$\pm \pi$)
     \item Dieser Punkt ist $\underline{z}_e$
     \item Eingangsimpedanz ablesen
           \[\underline{Z}_E = \underline{z}_e \cdot Z_L\]
+\end{enumerate}
+
+\subsection{Vorgehen mit geg. Eingangswiderstand}
+Wenn mit dem Smith-Diagramm gearbeitet wird, liefert dies die Schritte
+\ref{Ref L_anfang} und \ref{Bestimmen Z_E}
+\begin{enumerate}
+	\item Lastimpedanz
+	      \[ \underline{Z}_A = \dfrac{1}{\frac{1}{R_A} + j \omega C_A} \]
+	\item Reflexion am Leitungsende
+	      \[ \underline{r}_A = \underline{r}(z=0) = \dfrac{Z_A - \underline{Z}_L}{Z_A + \underline{Z}_L} \]
+	\item Reflexion am Leitungsanfang \label{Ref L_anfang}
+	      \[ \underline{r}_E = \underline{r}(z=d) =  \underline{r}_A \cdot e^{-j 2 \beta d}\]
+	\item Bestimmung der Impedanz \label{Bestimmen Z_E}
+	      \[ \underline{Z}_E = \underline{Z}_L \cdot \dfrac{1 + \underline{r}_E}{1 - \underline{r}_E}\]
+	\item Eingangswiderstand
+	      \[ \underline{Z}_E = \dfrac{1}{\frac{1}{\underline{Z}_E} + j \omega C_E}\]
 \end{enumerate}
 \input{Figures/Smithdiagramm_Zusammenschaltungen.tex}  

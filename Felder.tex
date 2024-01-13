@@ -132,7 +132,7 @@ mit $\opgrad \frac{1}{\left|\vec{r}-\vec{r}^{\,\prime}\right|}=-\frac{\vec{r}-\v
     \vec{H}=\frac{I}{4 \pi} \oint_{C^{\prime}} \frac{\mathrm{d} \vec{s}^{\,\prime} \times\left(\vec{r}-\vec{r}^{\,\prime}\right)}{\left|\vec{r}-\vec{r}^{\,\prime}\right|^{3}}
 \]
 
-{\footnotesize$\vec{r}:$ Aufpunkt $\quad \vec{r}^{\,\prime}:$ Quellpunkt}
+{\footnotesize$\vec{r}:$ Mess/Aufpunkt $\quad \vec{r}^{\,\prime}:$ Quellpunkt (Leiter)}
 \[
     H = \frac{I}{2 \pi A} ( \cos(\alpha_1) - \cos(\alpha_2))
 \]
@@ -216,3 +216,65 @@ einer bestimmten Frequenz, kann dies mit der folgenden Formel berechnet werden:
             \boxed{x=\frac{r_0}{2\delta}} \qquad r_0 \hat{=} \textnormal{Außenradius}
         \]
 \end{description}
+
+
+\subsection{E-Felder an Grenzflächen}
+\subsubsection{Dielektrische Grenzfläche}
+\textbf{Querschichtung}:
+\begin{align*}
+	D_{1n} & = D_{2n} & \varepsilon_1 E_{1n} & =\varepsilon_2 E_{2n} &
+\end{align*}
+Schwächeres E-Feld bei höherem $ \varepsilon $.
+
+\vspace{0.5em}
+\textbf{Längsschichtung}:
+\begin{align*}
+	E_{1t} & = E_{2t} & \frac{D_{1t}}{\varepsilon_1} & = \frac{D_{2t}}{\varepsilon_2} &
+\end{align*}
+
+Höheres D-Feld (mehr Ladungen) bei höherem $ \varepsilon $.
+
+\vspace{0.5em}
+\textbf{Schrägschichtung}:
+\begin{align*}
+	 & \frac{\tan( \alpha_1)}{\tan( \alpha_2)} = \frac{E_{1t}/E_{1n}}{E_{2t}/E_{2n}} = \frac{D_{2n}/\varepsilon_2}{D_{1n}/\varepsilon_1} = \frac{ \varepsilon_1}{\varepsilon_2}
+\end{align*}
+
+\subsubsection{Grenzfläche Dielektrikum-Leiter}
+Ladungen verschieben sich so lange, bis im Leiter kein Feld mehr herrscht.
+$\rightarrow E_{2t}, E_{2n}, D_{2t}, D_{2n} = 0 $
+
+\vspace{0.5em}
+\textbf{Längsschichtung}:
+\begin{align*}
+	E_{1t} & = E_{2t} = 0 & D_{1t} & =\varepsilon_1 E_{1t} = 0 &
+\end{align*}
+Felder stehen stets senkrecht auf elek. Leitern.
+
+\vspace{0.5em}
+\textbf{Querschichtung}:
+\begin{align*}
+	D_{1n} - D_{2n} & = \frac{Q}{A} & D_{1n} & = \frac{Q}{A} & E_{1n} & = \frac{Q}{\varepsilon_1 A} &
+\end{align*}
+
+D-Feld entspricht der Flächenladungsdichte des Leiters.
+
+\subsubsection{Grenzfläche an magn. Feldern}
+\textbf{Querschichtung}:
+\begin{align*}
+	B_{1n} & = B_{2n} & \mu_1 H_{1n} & =\mu_2 H_{2n} &
+\end{align*}
+Schwächeres H-Feld bei höherem $ \mu $.\\
+
+\textbf{Längsschichtung}:
+\begin{align*}
+	H_{1t} & = H_{2t} & \frac{B_{1t}}{mu_1} & = \frac{B_{2t}}{\mu_2} &
+\end{align*}
+
+Höheres B-Feld (mehr Fluss) bei höherem $ \mu $.
+
+\vspace{0.5em}
+\textbf{Schrägschichtung}:
+\begin{align*}
+	 & \frac{\tan( \alpha_1)}{\tan( \alpha_2)} = \frac{ \mu_1}{\mu_2}
+\end{align*}

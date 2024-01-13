@@ -1,60 +1,9 @@
 \section{Grundlagen}
 \subsection{Einheiten}
-\begin{table}[H]
-	\renewcommand{\arraystretch}{2.15}
-\begin{tabularx}{0.9\columnwidth}{lXl}
-	Größe & Symbol & Einheit\\
-	\hline
-	Permiabilitätskonstante & $\mu_0$ &  $\dfrac{\texttt{Vs}}{\texttt{Am}}$\\
-	\hline
-	Dilelektrizitätskonstante & $\varepsilon_0$ &  $\dfrac{\texttt{As}}{\texttt{Vm}}$\\
-		\hline
-	elek. Ladung/Fluss & $ Q, q $ & $ C=As $\\
-	\hline
-	elek. Feldstärke & $ \vec{E} $ & $\dfrac{\texttt{V}}{\texttt{m}}$\\
-	\hline
-	elek. Flussdichte & $ \vec{D} $ & $\dfrac{\texttt{As}}{\texttt{m}^2}=\dfrac{\texttt{C}}{\texttt{m}^2}$\\
-	\hline
-	Kapazität & $C$ &  $F= \dfrac{\texttt{As}}{\texttt{V}}$\\
-		\hline
-	mag. Fluss& $\phi, \Phi$ &  $Wb = Vs$\\
-		\hline
-	mag. Feldstärke & $\vec{H}$ &  $\dfrac{A}{m}$\\
-		\hline
-	mag. Flussdichte & $\vec{B}$ &  $T = \dfrac{\texttt{Vs}}{\texttt{m}^2}$\\
-	\hline
-	Induktivität & $L$ &  $H = \dfrac{\texttt{Vs}}{\texttt{A}}$\\
-		\hline
-	Strahlungsdichte & $S_{av}, I$ &  $\dfrac{\texttt{W}}{\texttt{m}^2}$\\
-				
-%	A, W & Arbeit, Energie & J = VAs = Ws\\
-%	$\vec{A}$ & mag. Vektorpotenzial & $\dfrac{Vs}{m} = \dfrac{T}{m}$ ($\vec{B}$ = $\nabla \times \vec{A}$)\\
-%	$\vec{B}$ & mag. Flussdichte & $T = \dfrac{Vs}{m^2}$\\
-%	C & Kapazität & $F = \dfrac{As}{V}$\\
-%	$\vec{D}$ & dielek. Verschiebung/Erregung & $\dfrac{As}{m^2}$\\
-%	e, q, Q & (Elementar-)ladung & C = As\\
-%	$\vec{E}$ & elek. Feldstärke & $\dfrac{V}{m}$ \\
-%	$\vec{H}$ & mag. Feldstärke/Erregung & $\dfrac{A}{m}$\\
-%	$\vec{J}$ & Stromdichte & $\dfrac{A}{m^2}$\\
-%	$\vec{J}_F$ & Flächenstromdichte & $\dfrac{A}{m}$\\
-%	$\vec{M}$ & Drehmoment & J = Nm = VAs\\
-%	F & Kraft & $\dfrac{kgm}{s} = N$\\
-%	$R_{mag}$ & mag. Widerstand & $\dfrac{S}{s} = \dfrac{A}{Vs}$\\
-%	$\vec{S}$ & Poynting-Vektor & $\dfrac{W}{m^2}$\\
-%	Z & Wellenwiderstand & $\Omega$\\
-%	$\delta_s$ & Eindringtiefe & m \\
-%	$\varepsilon$ & Dielektrizitätskonstante & $\dfrac{As}{Vm}$\\
-%	$\varphi$ & elek. Skalarpotenzial & V \\
-%	$\varphi_m$ & mag. Skalarpotenzial & A \\
-%	$\rho$ & Raumladungsdichte & $\dfrac{As}{m^3}$\\
-%	$\rho$ & spez. Widerstand & $\dfrac{\Omega}{m} = \dfrac{VA}{m}$\\
-%	$\kappa, \sigma$ & elek. Leitfähigkeit & $\dfrac{S}{m} = \dfrac{A}{Vm}$\\
-%	$\lambda$ & Wellenlänge & m\\
-%	$\Phi_e$ & elek. Fluss & C = As\\
-%	$\Phi_m$ & mag. Fluss & $Wb = \dfrac{T}{m^2}$\\
-%	\hline
-\end{tabularx}
-\end{table}
+% \begin{table}[H]
+% 	\renewcommand{\arraystretch}{2.15}
+% \begin{tabularx}{0.9\columnwidth}{lXl}
+
 \subsection{Vektorrechnung}
 \subsubsection{Betrag, Richtungswinkel, Normierung}
 \textbf{Betrag}
@@ -196,15 +145,6 @@ quellen- und wirbelfreies Vektorfeld $\vec{F}$:
     &\oprot (\oprot \vec{F})  = \opgrad (\opdiv \vec{F}) - \varDelta \vec{F} 
 \end{align*}
 
-% Feldänderung bei Bewegung
-% \begin{align*}
-%     \Delta G & = \dfrac{\partial G}{\partial x} \Delta x + \dfrac{\partial G}{\partial y} \Delta y + \dfrac{\partial G}{\partial z} \Delta z \\
-%              & = dG = \opgrad G \cdot d \vec{s}
-% \end{align*}
-
-% \columnbreak
-
-
     \subsection{Logarithmische Maße/Pegel}
 	Wichtig: Feldgrößen sind \textbf{Effektivwerte}!
         \begin{itemize} 
@@ -228,45 +168,15 @@ quellen- und wirbelfreies Vektorfeld $\vec{F}$:
 			\hline
 			dBm, dB(mW) & $ P_0 = 1mW $ & $ L_{\texttt{P/mW}}$ \\
 			dBW, dB(W) & $ P_0 = 1W $ & $ L_{\texttt{P/W}}$ \\
-%			\hline
-%			dBV, dB(V) & $ F_0 = 1V $ & $ L_{\texttt{U/V}}$ \\
-%			dB$\mu$V, dB($\mu$V) & $ F_0 = 1\mu V $ & $ L_{\texttt{U/$\mu$V}}$ \\
-%			dB$\mu$A, dB($\mu$A) & $ F_0 = 1\mu A $ & $ L_{\texttt{I/$ \mu $A}}$ \\
-%			dB($ \mu $V/m) & $ F_0 = 1 \tfrac{\mu V}{m} $ & $ L_{\texttt{E/($ \mu $V/m)}}$\\
-%			dB($ \mu $A/m) & $ F_0 = 1 \tfrac{\mu A}{m} $ & $ L_{\texttt{H/($ \mu $A/m)}}$\\
 			\hline
 			\end{tabularx}
 			
-%            \item \textbf{Umrechnung} (Annäherungswerte)
-%            \renewcommand\arraystretch{1.2}
-%            \begin{table}[H]
-%	            \begin{tabularx}{1\columnwidth}{l|X|X}
-%	            	\hline
-%            		Faktor $ \tfrac{F_1}{F_0} \, \text{bzw.} \, \tfrac{P_1}{P_0}$ & Energiegröße $P_n$ & Feldgröße $F_n$\\
-%            		\hline
-%            		1 & 0 & 0 \\
-%            		100 & 20 \si{dB} & 40 \si{dB} \\
-%            		1000 & 30 \si{dB} & 60  \si{dB} \\
-%            		0,1 & -10 \si{dB} & -20 \si{dB} \\
-%            		0,01 & -20 \si{dB} & -40 \si{dB} \\
-%            		0,001 & -30 \si{dB} & -60 \si{dB} \\
-%            		2 & 3 \si{dB} & 6 \si{dB} \\
-%            		4 & 6 \si{dB} & 12 \si{dB} \\
-%            		8 & 9 \si{dB} & 18 \si{dB} \\
-%            		0,5 & -3,01 \si{dB} & -6,02 \si{dB} \\
-%            		1,25 & 0,97 \si{dB} & 1,94 \si{dB} \\
-%            		0,8 & -0,97 \si{dB} & -1,94 \si{dB} \\
-%            		\hline
-%            	\end{tabularx}    
-%            \end{table}
         \item \textbf{relativer Pegel / Maß}\\
         Maß = Differenz zweier (Leistungs)pegel bei\\ gleichem Bezugswert $ P_0 $
         \begin{equation*}
         	\Delta L = L_2 - L_1 = 10 \cdot \log \left( \frac{P_2}{P_1}\right)  \si{dB}
         \end{equation*}
         \end{itemize}
-%\textit{Pegel}: feste Bezugsgröße $ P_0 $\\
-%\textit{Maß}: beliebige Bezugsgröße $ P_2 $ bzw. Differenz zweier Pegel\\
 
 \subsubsection{Rechnen mit Pegeln / Logarithmen}
 Rechenregeln für Logarithmen (10er-Basis): \quad $ x,y,a > 0 $
@@ -345,3 +255,6 @@ $a$: Basis \qquad $m,n$: Exponent
     \hline
     $d x \cos \vartheta \cos \varphi+d y \cos \vartheta \sin \varphi-d z \sin \vartheta$ &                  & $r d \vartheta$                 \\
 \end{tabularx}
+
+\subsubsection{Schema KOS Kugel/Zylinder}
+\input{Figures/KOS_Kugelbild.tex}

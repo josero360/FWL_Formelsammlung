@@ -1,20 +1,38 @@
 \section{Leitungen}
-\subsection{Allgemeine Lösung Leitungsgleichung}
+\subsection{Allgemeine Lösung Leitungsgleichung}2
 \begin{align*}
-    \underline{U}(\ell)  & = U_h e^{-\underline{\gamma} \ell} + U_r e^{\underline{\gamma} \ell} \\
-    \underline{I}(\ell)  & = I_h e^{-\underline{\gamma} \ell} + I_r e^{\underline{\gamma} \ell} \\
+    \underline{U}(\ell) & = U_h e^{-\underline{\gamma} \ell} + U_r e^{\underline{\gamma} \ell} \\
+                        & = \underline{U}_A \cdot \cosh(\underline{\gamma}\ell) + Z_L \underline{I}_A \cdot \sinh(\underline{\gamma}\ell)                                 \\
+	                    & = \underline{U}_A \cdot \left[ \cosh(\underline{\gamma} \ell) + \tfrac{\underline{Z}_L}{\underline{Z}_A} \sinh(\underline{\gamma} \ell) \right] \\
+    \underline{I}(\ell) & = I_h e^{-\underline{\gamma} \ell} + I_r e^{\underline{\gamma} \ell} \\
+                        & = \underline{I}_A \cdot \cosh(\underline{\gamma}\ell) + \frac{\underline{U}_A}{Z_L} \cdot \sinh(\underline{\gamma}\ell)                         \\
+	                    & = \underline{I}_A \cdot \left[ \cosh(\underline{\gamma} \ell) + \tfrac{\underline{Z}_A}{\underline{Z}_L} \sinh(\underline{\gamma} \ell) \right] \\
     \underline{Z}_L     & = \frac{U_h}{I_h} = \sqrt{ \frac{R + j \omega L}{G + j \omega C}}                                                                                   \\
-    \underline{\gamma}  & = \alpha + j\beta = \sqrt{(R+j\omega L)\cdot(G+j\omega C)}                                                                                                            \\
-    \lambda             & = \frac{2 \pi}{\beta} \qquad v_p = \frac{\omega}{\beta} \\
+                        & = \frac{\underline{Z}_A+ \underline{Z}_L\tanh(\underline{\gamma}
+		                    \ell)}{1+\frac{\underline{Z}_A}{\underline{Z}_L}\tanh(\underline{\gamma} \ell)} =
+                            \underline{Z}_L \frac{\underline{Z}_A+ \underline{Z}_L\tanh(\underline{\gamma}
+                            \ell)}{{\underline{Z}_L}+{\underline{Z}_A}\tanh(\underline{\gamma} \ell)}\\
+    \underline{\gamma}  & = \alpha + j\beta = \sqrt{(R+j\omega L)\cdot(G+j\omega C)}     \\                                                                                                       \\
     l_\texttt{elek.}    & = \beta \cdot l                                                                                                                                     \\
     \alpha              & = \frac{C R+L G}{2 \sqrt{L C}}=\frac{R}{2 Z_L}+\frac{Z_L G}{2}=\alpha_L+\alpha_D \\
     \beta               & = (j) \omega \sqrt{L C}
 \end{align*}
+Komplexer $\underline{\gamma}$ nicht im TR berechenbar:
+
+\underline{Lösung:} $\alpha l \left[ \tfrac{\texttt{Np}}{\texttt{m}} \right] $
+und $ \beta l \left[ \tfrac{\texttt{rad}}{\texttt{m}} \right] $ einzeln
+berechnen, dann:
+\begin{align*}
+	\cosh(\underline{\gamma}l)  & = \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} + e^{-\alpha l} \cdot e^{-j\beta l} \right] \\
+	\sinh (\underline{\gamma}l) & = \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} - e^{-\alpha l} \cdot e^{-j\beta l} \right] \\
+	\tanh(\underline{\gamma}l)  & =
+	1-\frac{2}{e^{2\alpha l} \cdot e^{j2\beta l}+1}
+\end{align*}
+
 \subsubsection{Reflexionsfaktor}
 \begin{align*}
-    \underline{r}(\ell)     & = \frac{\underline{U}_r(\ell)}{\underline{U}_h(\ell)} = -\frac{\underline{I}_r(\ell)}{\underline{I}_h(\ell)} = \frac{\underline{U}_r(\ell=0) \cdot \mathrm{e}^{-\mathrm{j} \beta \ell}}{\underline{U}_h(\ell=0) \cdot \mathrm{e}^{+\mathrm{j} \beta \ell}} \\
+    \underline{r}(\ell)     & = \frac{\underline{U}_r(\ell)}{\underline{U}_h(\ell)} = -\frac{\underline{I}_r(\ell)}{\underline{I}_h(\ell)} = \frac{\frac{Z_L}{\underline{Z}(\ell)}-1}{\frac{Z_L}{\underline{Z}(\ell)}+1}\\
                             & = \underline{r}(\ell=0) \cdot \mathrm{e}^{-2 \underline{\gamma} \ell}=\underline{r}(\ell=0) \cdot \mathrm{e}^{-2 \alpha \ell} \cdot \mathrm{e}^{-\mathrm{j} 2 \beta \ell}\\
-                            & = \frac{\frac{Z_L}{\underline{Z}(\ell)}-1}{\frac{Z_L}{\underline{Z}(\ell)}+1} \\
     \underline{r}           & = \frac{\underline{z}_n-1}{\underline{z}_n+1} \qquad              \underline{z}_n=\frac{\underline{Z}_n}{Z_L}\\
     \underline{r}(\ell = 0) & = \frac{\underline{U}_A-\underline{I}_A Z_L}{\underline{U}_A + \underline{I}_A Z_L}=\frac{\underline{Z}_A-Z_L}{\underline{Z}_A+Z_L}=\frac{\frac{\underline{Z}_A}{Z_L}-1}{\frac{\underline{Z}_A}{Z_L}+1}\\
                     \alpha  & = -\frac{\ln(\frac{r_A}{r_E})}{2l} [\si{Np/m}]  \qquad  \beta = \dfrac{\phi_E -\phi_A}{2l} \left[\cdot\frac{\pi}{180^\circ}\right] [\si{rad/m}]
@@ -32,21 +50,6 @@
 \subsection{Übertragungsleitung mit Last}
 \input{Figures/Leitungen_Uebertragung_mit_Last.tex}
 
-
-% \subsubsection{Vorgehen Eingangswiderstand}
-% Wenn mit Smithdiagramm gearbeitet wird liefert dieses Schritte \ref{Ref L_anfang} und \ref{Bestimmen Z_E}
-% \begin{enumerate}
-%     \item Lastimpedanz
-%           \[ \underline{Z}_A = \dfrac{1}{\frac{1}{R_A} + j \omega C_A} \]
-%     \item Reflexion am Leitungsende
-%           \[ \underline{r}(z=0) = \dfrac{Z_A - \underline{Z}_L}{Z_A + \underline{Z}_L} \]
-%     \item Reflexion am Leitungsanfang \label{Ref L_anfang}
-%           \[ \underline{r}(\ell = -d) =  \underline{r}_A \cdot e^{-j 2 \beta d}\]
-%     \item Bestimmung der Impedanz \label{Bestimmen Z_E}
-%           \[ \underline{Z}_E = \underline{Z}_L \cdot \dfrac{1 + \underline{r}_E}{1 - \underline{r}_E}\]
-%     \item Eingangswiderstand
-%           \[ \underline{Z}_E = \dfrac{1}{\frac{1}{\underline{Z}_E} + j \omega C_E}\]
-% \end{enumerate}
 
 \subsubsection{Fall: Angepasste Leitung}
 \begin{align*}
@@ -79,7 +82,7 @@
     I(\ell)         & = U_h\cdot 2j\sin(\beta \ell) \qquad\rightarrow I(\ell=0)=I_A = \frac{2\cdot U_h}{Z_L}
 \end{align*}
 
-\subsubsection{Fall: Beliebiger Abschluss}
+\subsubsection{Fall: Beliebiger Abschluss ($\alpha = 0$)}
 \begin{align*}
     \underline{U}(\ell) &= \underline{U}_A\left[\cos (\beta \ell)+\mathrm{j} \frac{\underline{Z}_L}{\underline{Z}_A} \sin (\beta \ell)\right] \\
     \underline{I}(\ell) &= \underline{I}_A\left[\cos (\beta \ell)+\mathrm{j} \frac{\underline{Z}_A}{\underline{Z}_L} \sin (\beta \ell)\right] \\
