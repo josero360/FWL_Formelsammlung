@@ -38,13 +38,13 @@ Phasenkonstante $ [\beta] $= $ \frac{\mathtt{rad}}{m} $
 \textbf{Wellenzahl:}
 Im Vakuum: $\beta_{0}=\frac{\omega}{c_{0}}$
 \begin{align*}
-    \beta & = \frac{\omega}{c_0} = \frac{2 \pi f}{v_p} = |\vec{\beta}|                                                                      \\
-      & = \frac{\omega \cdot n}{c_{0}} = n \cdot \beta_{0}=\sqrt{\mu_{r} \cdot \varepsilon_{r}} \cdot \beta_{0}
+    \beta & = \frac{2 \pi}{\lambda} = \frac{\omega}{c_0} = \frac{2 \pi f}{v_p} = |\vec{\beta}|                                                                      \\
+      	  & = \frac{\omega \cdot n}{c_{0}} = n \cdot \beta_{0}=\sqrt{\mu_{r} \cdot \varepsilon_{r}} \cdot \beta_{0}
 \end{align*}
 
 \textbf{Wellenlänge:}
 \begin{align*}
-    \lambda   & = \dfrac{\lambda_0}{\sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{2 \pi}{\beta} = \dfrac{v_p}{f} = [m] \\
+    \lambda   & = \dfrac{\lambda_0}{\sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{c_0}{f \sqrt{\mu_r \cdot \varepsilon_r}} = \dfrac{2 \pi}{\beta} = \dfrac{v_p}{f} = [m] \\
               & = \dfrac{\lambda_0}{n} = \dfrac{2 \pi}{n \cdot k_0}                                             \\
     \lambda_0 & = \dfrac{c_0}{f} = \dfrac{2\pi}{k_0}
 \end{align*}
@@ -82,7 +82,7 @@ $Z_F$ rein reel $\rightarrow$ ebene Welle
     \alpha                  & = 0  \qquad \beta = \dfrac{\omega}{c_0}\sqrt{\mu_r\varepsilon_r}=\omega\sqrt{\mu\varepsilon}=\dfrac{2\pi}{\lambda} \\
     \lambda                 & = \dfrac{c_0}{f}\dfrac{1}{\sqrt{\mu_r\varepsilon_r}}                                             \\
     v_p                     & = \dfrac{c_0}{\sqrt{\mu_r\varepsilon_r}}                                                         \\
-    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}}
+    \Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}} = Z_{F0} \cdot \sqrt{\dfrac{\mu_r}{\varepsilon_r}}}
 \end{align*}
 
 \subsubsection{Im Dielektrika mit geringem Verlust}
@@ -243,7 +243,7 @@ Die Polarisation (Ausrichtung) bezieht sich \textbf{immer} auf das $\vec{E}$-Fel
 \end{itemize}
 
 
-
+\newpage
 \subsection[Senkrechter Einfall]{Senkrechter Einfall}
 Gilt bei Einfallswinkel $ \theta_h = 0 $.
 \input{Figures/Wellen_Senkrechter_Uebergang.tex}
