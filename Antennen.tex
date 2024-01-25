@@ -223,7 +223,11 @@ $C_{i} \ent$ isotroper Kugelstrahler als Bezugsgröße in Hauptabstrahlrichtung
 	\left(\frac{\cos\left(\pi\cos\vartheta\right)+1}{2\sin\vartheta}\right)^\mathbf{2}        &
 \end{align*}
 
-\newcolumn
+\paragraph{Abstrahlwinkel}
+(meist $\vartheta$)\\
+\input{Figures/Antennen_Winkel.tex}
+
+
 \subsection{Senden und Empfangen}
 Bei Anpassung: $R_e = R_s \rightarrow$ max. Wirkleistung wird übertragen!
 \input{Figures/Antennen_Empfangsersatzschaltbild_circuit.tex}
@@ -239,7 +243,7 @@ $ r $: \textbf{Abstand} von der Antenne
 \subsubsection{Wirksame/Effektive Antennenfläche}
 \begin{align*}
 	A_\texttt{eff} & = \frac{P_e}{S_s} = \frac{U_0^2}{8R_{s}}\frac{2Z_{F0}}{E_0^2}                  &
-	A_\texttt{eff} & = \frac{\lambda^2}{4\pi}\cdot G = \dfrac{Z_{F0}}{4 R_S} \cdot l_\texttt{eff}^2 &
+	A_{\mathtt{eff,n}}\Big|_{\mathtt{max}} & = \frac{\lambda^2}{4\pi}\cdot G_n = \dfrac{Z_{F0}}{4 R_S} \cdot l_\texttt{eff}^2 &
 \end{align*}
 
 Beim Hertzschen Dipol:
@@ -250,12 +254,10 @@ Beim Hertzschen Dipol:
 \subsubsection{Friis-Übertragungsgleichung}
 \begin{align*}
 	 & S_{iso} = \frac{P_s}{4\pi r^2}                                                       & S_s = S_{iso} \cdot D_s                                                  \\
-	 & S_{\texttt{iso,max}}=\frac{P_s}{4\pi r^2}\cdot G                                                                                                                \\
-	 & A_{\mathtt{eff,n}} = \frac{\lambda^2}{4\pi}\cdot D_n(\vartheta, \varphi)\cdot \eta_n & A_{\mathtt{eff,n}}\Big|_{\mathtt{max}} = \frac{\lambda^2}{4\pi}\cdot G_n
+	 & S_n=\frac{P_s}{4\pi r^2}\cdot G_n = \frac{P_s}{4\pi r^2}\cdot D_n(\vartheta, \varphi)\cdot \eta_n                                                                                                              
 \end{align*}
 \begin{align*}
-	P_e                                     & = S_s \cdot A_{\mathtt{eff,e}}                                                                                             \\
-	                                        & =  S_s\cdot \frac{\lambda^2}{4\pi}\cdot D_e(\vartheta, \varphi)\cdot \eta_e                                                \\
+	P_e                                     & = S_s \cdot A_{\mathtt{eff,e}} = S_s\cdot \frac{\lambda^2}{4\pi}\cdot D_e(\vartheta, \varphi)\cdot \eta_e                                                \\
 	\frac{P_{e}}{P_{s}}                     & = A_{\texttt{eff},e}\cdot A_{\texttt{eff},s}\cdot\frac{1}{\lambda^2r^2}                                                    \\
 	                                        & = D_e(\vartheta, \varphi)\cdot\eta_{e}\cdot D_s(\vartheta, \varphi)\cdot\eta_{s}\cdot\left(\frac{\lambda}{4\pi r}\right)^2 \\
 	\frac{P_{e}}{P_{s}}\Big|_{\mathtt{max}} & = G_{s}\cdot G_{e}\cdot \left(\frac{\lambda}{4\pi r}\right)^2
